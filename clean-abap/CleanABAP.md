@@ -1258,7 +1258,7 @@ some_string = 'ABC'.
 DATA(some_string) = |ABC|.
 ```
 
-### Use | to assemble text
+### Use \| to assemble text
 
 > [Clean ABAP](#clean-abap) > [Content](#content) > [Strings](#strings) > [This section](#use--to-assemble-text)
 

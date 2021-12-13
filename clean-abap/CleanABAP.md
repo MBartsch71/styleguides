@@ -593,6 +593,20 @@ ENDMETHOD.
 > [Avoid Encodings](sub-sections/AvoidEncodings.md)
 > describes the reasoning in depth.
 
+| Topic                                                   | Reference     |
+|---------------------------------------------------------|---------------|
+| - Use descriptive names                                 | [^CC] page 39, [^IP] chapter 5 / 6 |
+| - Prefer solution domain and problem domain terms       | [^CC] page 27 |
+| - Use plural                                            | [^IP] chapter 6, page 51            |
+| - Use pronounceable names                               | [^CC] page 21 |
+| - Avoid abbreviations                                   | [^CC] page 25, [^IP] chapter 6 page 59 |
+| - Use same abbreviations everywhere                     | [^CC] page 26 |
+| - Use nouns for classes and verbs for methods           | [^CC] page 25, [^IP] chapter 5 / 6 |
+| - Avoid noise words such as "data", "info", "object"    | [^CC] page 29 |
+| - Pick one word per concept                             | [^CC] page 26 |
+| - Use pattern names only if you mean them               | [^CC] page 27 |
+| - Avoid encodings, esp. Hungarian notation and prefixes | [^CC] page 23, [^IP] chapter 6 page 50 |
+
 ## Language
 
 > [Clean ABAP](#clean-abap) > [Content](#content) > [This section](#language)
@@ -4983,3 +4997,9 @@ ENDMETHOD.
 ```
 
 Instead of copy-pasting this over and over again.
+
+# Footnotes
+[^CC]: Robert C. Martin - Clean Code, A Handbook of Agile Software Craftsmanship. 
+[^IP]: Kent Beck - Implementation Patterns. 
+[^RF]: Martin Fowler -Refactoring, Improving the Design of Existing Code  
+[^DP]: Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides - Design Patterns, Elements of Reusable Object-Oriented Software 

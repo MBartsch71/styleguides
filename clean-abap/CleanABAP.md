@@ -593,6 +593,7 @@ ENDMETHOD.
 > [Avoid Encodings](sub-sections/AvoidEncodings.md)
 > describes the reasoning in depth.
 
+### Reference table
 | Topic                                                   | Reference     |
 |---------------------------------------------------------|---------------|
 | - Use descriptive names                                 | [^CC] page 39, [^IP] chapter 5 / 6 |
@@ -765,6 +766,7 @@ that lists obsolete language elements, for example
 Where they are appropriate and provide noticeable benefit.
 Don't apply design patterns everywhere just for the sake of it.
 
+### Reference table
 | Topic                                                   | Reference     |
 |---------------------------------------------------------|---------------|
 | - Mind the legacy                                       | 	|
@@ -889,9 +891,10 @@ ENDDO.
 
 > Read more in _Chapter 17: Smells and Heuristics: G27: Structure over Convention_ of [Robert C. Martin's _Clean Code_].
 
+### Reference table
 | Topic                                                        | Reference     |
 |--------------------------------------------------------------|---------------|
-| - Use constants instead of magic numbers                     | 	|
+| - Use constants instead of magic numbers                     | [^CC] chapter 17 - page 300 |
 | - Prefer enumeration classes to constants interfaces         |   |
 | - If you don't use enumeration classes, group your constants |   |
 
@@ -1037,6 +1040,7 @@ Similarly, speed is not an issue. As a consequence, there is no performance-rela
 > Read more in the article
 > [_Accessing Data Objects Dynamically_ in the ABAP Programming Guidelines](https://help.sap.com/doc/abapdocu_751_index_htm/7.51/en-US/index.htm?file=abendyn_access_data_obj_guidl.htm).
 
+### Reference table
 | Topic                                                   | Reference     |
 |---------------------------------------------------------|---------------|
 | - Prefer inline to up-front declarations                | 	|
@@ -1220,6 +1224,7 @@ DATA(row) = my_table[ key = input ].
 > this is a special variant of the more general
 > [Focus on the happy path or error handling, but not both](#focus-on-the-happy-path-or-error-handling-but-not-both).
 
+### Reference table
 | Topic                                                   | Reference     |
 |---------------------------------------------------------|---------------|
 | - Use the right table type                              | 	|
@@ -1274,6 +1279,7 @@ especially if you embed multiple variables in a text.
 DATA(message) = `Received an unexpected HTTP ` && status_code && ` with message ` && text.
 ```
 
+### Reference table
 | Topic                                                   | Reference     |
 |---------------------------------------------------------|---------------|
 | - Use \` to define literals                             | 	|
@@ -1405,9 +1411,10 @@ which is why we suggest it only as secondary solution.
 DATA(has_entries) = COND abap_bool( WHEN line IS NOT INITIAL THEN abap_true ).
 ```
 
+### Reference table
 | Topic                                                   | Reference     |
 |---------------------------------------------------------|---------------|
-| - Use Booleans wisely                                   | 	|
+| - Use Booleans wisely                                   | [^CC] chapter 3 page 40|
 | - Use ABAP_BOOL for Booleans					          |   |
 | - Use ABAP_TRUE and ABAP_FALSE for comparisons          |   |
 | - Use XSDBOOL to set Boolean variables                  |  |
@@ -1519,12 +1526,12 @@ METHOD is_provided.
                     is_working = abap_true ).
 ENDMETHOD.
 ```
-
+### Reference table
 | Topic                                                   | Reference     |
 |---------------------------------------------------------|---------------|
-| - Try to make conditions positive                       | 	|
+| - Try to make conditions positive                       | [^CC] chapter 17 page 302	|
 | - Prefer IS NOT to NOT IS     				          |   |
-| - Consider decomposing complex conditions               |   |
+| - Consider decomposing complex conditions               | [^CC] chapter 17 page 299  |
 | - Consider extracting complex conditions                |  |
 
 ## Ifs
@@ -1619,6 +1626,7 @@ IF <this>.
   IF <that>.
 ```
 
+### Reference table
 | Topic                                                         | Reference     |
 |---------------------------------------------------------------|---------------|
 | - No empty IF branches                                        | 	|
@@ -1685,6 +1693,7 @@ DATA(object_name) = |{ class_name }\|{ interface_name }|.
 Some complex regular expressions become easier
 when you demonstrate to the reader how they are built up from more elementary pieces.
 
+### Reference_table
 | Topic                                                   | Reference     |
 |---------------------------------------------------------|---------------|
 | - Prefer simpler methods to regular expressions         | 	|
@@ -2091,9 +2100,10 @@ If there are no design-driven reasons for a unitary object,
 leave that decision to the consumer - he can still reach the same by means outside the constructor,
 for example with a factory.
 
+### Reference table
 | Topic                                                   | Reference     |
 |---------------------------------------------------------|---------------|
-| - Prefer objects to static classes                      |   |
+| - Prefer objects to static classes                      |[^CC] chapter17 page 296   |
 | - Prefer composition to inheritance       	          |   |
 | - Don't mix stateful and stateless in the same class    |   |
 | - Global by default, local only where appropriate       |   |
@@ -3074,6 +3084,7 @@ Prefer using an `IF` statement in combination with `CONTINUE` instead, since `CO
 > Based on the [section _Exiting Procedures_ in the ABAP Programming Guidelines](https://help.sap.com/doc/abapdocu_751_index_htm/7.51/en-US/index.htm?file=abenexit_procedure_guidl.htm).
 > Note that this contradicts the [keyword reference for `CHECK` in loops](https://help.sap.com/doc/abapdocu_752_index_htm/7.52/en-US/abapcheck_loop.htm).
 
+### Reference table
 | Topic                                                          | Reference     |
 |----------------------------------------------------------------|---------------|
 | - Don't call static methods through instance variables         | 	|
@@ -3515,18 +3526,19 @@ METHOD generate.
 ENDMETHOD.
 ```
 
+### Reference table
 | Topic                                                                | Reference     |
 |----------------------------------------------------------------------|---------------|
-| - Make messages easy to find                                         |   |
-| - Prefer exceptions to return codes			                       |   |
+| - Make messages easy to find                                         | [^CC] chapter 7 page 107 |
+| - Prefer exceptions to return codes			                       | [^CC] chapter 3 page 46, chapter 7 page 104 |
 | - Don't let failures slip through                                    |   |
-| - Exceptions are for errors, not for regular cases                   |   |
-| - Use class-based exceptions                                         |   |
+| - Exceptions are for errors, not for regular cases                   | [^CC] chapter 7 page 109  |
+| - Use class-based exceptions                                         | [^CC] chapter 7 page 107 |
 | - Use own super classes                                              |   |
 | - Throw one type of exception                                        |   |
 | - Use sub-classes to enable callers to distinguish error situations  |   |
 | - Throw CX_STATIC_CHECK for manageable exceptions                    |   |
-| - Throw CX_NO_CHECK for usually unrecoverable situations             |   |
+| - Throw CX_NO_CHECK for usually unrecoverable situations             | [^CC] chapter 7 page 106  |
 | - Consider CX_DYNAMIC_CHECK for avoidable exceptions                 |   |
 | - Dump for totally unrecoverable situations                          |   |
 | - Prefer RAISE EXCEPTION NEW to RAISE EXCEPTION TYPE                 |   |
@@ -3854,20 +3866,21 @@ MESSAGE e001(ad) INTO DATA(message). "#EC NEEDED
 Use program `ABAP_SLIN_PRAGMAS` or table `SLIN_DESC` to find the mapping between obsolete pseudo comments and the pragmas that 
 have replaced them.
 
+### Reference table
 | Topic                                                   | Reference     |
 |---------------------------------------------------------|---------------|
-| - Express yourself in code, not in comments             |   |
+| - Express yourself in code, not in comments             | [^CC] chapter 4 page 55  |
 | - Comments are no excuse for bad names		          |   |
-| - Use methods instead of comments to segment your code  |   |
-| - rite comments to explain the why, not the what        |   |
-| - Design goes into the design documents, not the code   |   |
+| - Use methods instead of comments to segment your code  | [^CC] chapter 4 page 67  |
+| - Write comments to explain the why, not the what       | [^CC] chapter 4 page 55ff. |
+| - Design goes into the design documents, not the code   | [^CC] chapter 4 page 63  |
 | - Comment with ", not with *                            |   |
 | - Put comments before the statement they relate to      |   |
-| - Delete code instead of commenting it                  |   |
-| - Use FIXME, TODO, and XXX and add your ID              |   |
-| - Don't add method signature and end-of comments        |   |
-| - Don't duplicate message texts as comments             |   |
-| - ABAP Doc only for public APIs                         |   |
+| - Delete code instead of commenting it                  | [^CC] chapter 4 page 68  |
+| - Use FIXME, TODO, and XXX and add your ID              | [^CC] chapter 4 page 58 |
+| - Don't add method signature and end-of comments        | [^CC] chapter 4 page 67  |
+| - Don't duplicate message texts as comments             | [^CC] chapter 4 page 60  |
+| - ABAP Doc only for public APIs                         | [^CC] chapter 4 page 59  |
 | - Prefer pragmas to pseudo comments                     |   |
 
 ## Formatting
@@ -4298,16 +4311,17 @@ Chained assignments usually confuse the reader. Besides, the inline declaration 
 var1 = var2 = var3.
 ```
 
+### Reference table
 | Topic                                                              | Reference     |
 |--------------------------------------------------------------------|---------------|
-| - Be consistent                                                    |   |
-| - Optimize for reading, not for writing	                         |   |
+| - Be consistent                                                    | [^CC] chapter 5 page 75 |
+| - Optimize for reading, not for writing	                         | [^CC] chapter 5 page 77 |
 | - Use the Pretty Printer before activating                         |   |
 | - Use your Pretty Printer team settings                            |   |
 | - No more than one statement per line                              |   |
-| - Stick to a reasonable line length                                |   |
+| - Stick to a reasonable line length                                | [^CC] chapter 5 page 77 |
 | - Condense your code                                               |   |
-| - Add a single blank line to separate things, but not more         |   |
+| - Add a single blank line to separate things, but not more         | [^CC] chapter 5 page 78  |
 | - Align assignments to the same object, but not to different ones  |   |
 | - Close brackets at line end                                       |   |
 | - Keep single parameter calls on one line                          |   |
@@ -4315,10 +4329,10 @@ var1 = var2 = var3.
 | - If you break, indent parameters under the call                   |   |
 | - Line-break multiple parameters			                         |   |
 | - Align parameters                                                 |   |
-| - Break the call to a new line if the line gets too long           |   |
-| - Indent and snap to tab                                           |   |
+| - Break the call to a new line if the line gets too long           | [^CC] chapter 5 page 89 |
+| - Indent and snap to tab                                           | [^CC] chapter 5 page 88 |
 | - Indent in-line declarations like method calls                    |   |
-| - Don't align type clauses                                         |   |
+| - Don't align type clauses                                         | [^CC] chapter 5 page 87 |
 | - Don't chain assignments                                          |   |
 
 ## Testing
@@ -5160,15 +5174,16 @@ ENDMETHOD.
 
 Instead of copy-pasting this over and over again.
 
+### Reference table
 | Topic                                                                 | Reference     |
 |-----------------------------------------------------------------------|---------------|
 | - Write testable code                                                 |   |
 | - Enable others to mock you                                           |   |
-| - Readability rules                                                   |   |
+| - Readability rules                                                   | [^CC] chapter 9 page 124 |
 | - Don't make copies or write test reports                             |   |
 | - Test public, not private internals                                  |   |
 | - Don't obsess about coverage                                         |   |
-| - Call local test classes by their purpose                            |   |
+| - Call local test classes by their purpose                            | [^CC] chapter 17 page 313 |
 | - Put tests in local classes                                          |   |
 | - Put help methods in help classes                                    |   |
 | - How to execute test classes                                         |   |
@@ -5191,7 +5206,7 @@ Instead of copy-pasting this over and over again.
 | - Make it easy to spot meaning                                        |   |
 | - Make it easy to spot differences                                    |   |
 | - Use constants to describe purpose and importance of test data       |   |
-| - Few, focused assertions                                             |   |
+| - Few, focused assertions                                             | [^CC] chapter 9 page 130 |
 | - Use the right assert type                                           |   |
 | - Assert content, not quantity                                        |   |
 | - Assert quality, not content                                         |   |

@@ -59,7 +59,7 @@ The [Cheat Sheet](cheat-sheet/CheatSheet.md) is a print-optimized version.
   - [Don't declare inline in optional branches](#dont-declare-inline-in-optional-branches)
   - [Do not chain up-front declarations](#do-not-chain-up-front-declarations)
   - [Prefer REF TO to FIELD-SYMBOL](#prefer-ref-to-to-field-symbol)
-  - - [Reference table](#reference-table-variables)
+  - [Reference table](#reference-table-variables)
 - [Tables](#tables)
   - [Use the right table type](#use-the-right-table-type)
   - [Avoid DEFAULT KEY](#avoid-default-key)
@@ -68,7 +68,7 @@ The [Cheat Sheet](cheat-sheet/CheatSheet.md) is a print-optimized version.
   - [Prefer READ TABLE to LOOP AT](#prefer-read-table-to-loop-at)
   - [Prefer LOOP AT WHERE to nested IF](#prefer-loop-at-where-to-nested-if)
   - [Avoid unnecessary table reads](#avoid-unnecessary-table-reads)
-  - - [Reference table](#reference-table-tables)
+  - [Reference table](#reference-table-tables)
 - [Strings](#strings)
   - [Use ` to define literals](#use--to-define-literals)
   - [Use | to assemble text](#use--to-assemble-text)
@@ -78,18 +78,18 @@ The [Cheat Sheet](cheat-sheet/CheatSheet.md) is a print-optimized version.
   - [Use ABAP_BOOL for Booleans](#use-abap_bool-for-booleans)
   - [Use ABAP_TRUE and ABAP_FALSE for comparisons](#use-abap_true-and-abap_false-for-comparisons)
   - [Use XSDBOOL to set Boolean variables](#use-xsdbool-to-set-boolean-variables)
-  - - [Reference table](#reference-table-booleans)
+  - [Reference table](#reference-table-booleans)
 - [Conditions](#conditions)
   - [Try to make conditions positive](#try-to-make-conditions-positive)
   - [Prefer IS NOT to NOT IS](#prefer-is-not-to-not-is)
   - [Consider decomposing complex conditions](#consider-decomposing-complex-conditions)
   - [Consider extracting complex conditions](#consider-extracting-complex-conditions)
-  - - [Reference table](#reference-table-conditions)
+  - [Reference table](#reference-table-conditions)
 - [Ifs](#ifs)
   - [No empty IF branches](#no-empty-if-branches)
   - [Prefer CASE to ELSE IF for multiple alternative conditions](#prefer-case-to-else-if-for-multiple-alternative-conditions)
   - [Keep the nesting depth low](#keep-the-nesting-depth-low)
-  - - [Reference table](#reference-table-ifs)
+  - [Reference table](#reference-table-ifs)
 - [Regular expressions](#regular-expressions)
   - [Prefer simpler methods to regular expressions](#prefer-simpler-methods-to-regular-expressions)
   - [Prefer basis checks to regular expressions](#prefer-basis-checks-to-regular-expressions)
@@ -913,7 +913,7 @@ ENDDO.
 
 > Read more in _Chapter 17: Smells and Heuristics: G27: Structure over Convention_ of [Robert C. Martin's _Clean Code_].
 
-### Reference table
+### Reference table constants
 > [Clean ABAP](#clean-abap) > [Content](#content) > [Language](#language) > [This section](#reference-table-constants)
 
 | Topic                                                        | Reference     |
@@ -1064,7 +1064,7 @@ Similarly, speed is not an issue. As a consequence, there is no performance-rela
 > Read more in the article
 > [_Accessing Data Objects Dynamically_ in the ABAP Programming Guidelines](https://help.sap.com/doc/abapdocu_751_index_htm/7.51/en-US/index.htm?file=abendyn_access_data_obj_guidl.htm).
 
-### Reference table
+### Reference table variables
 > [Clean ABAP](#clean-abap) > [Content](#content) > [Language](#language) > [This section](#reference-table-variables)
 
 | Topic                                                   | Reference     |
@@ -1250,7 +1250,7 @@ DATA(row) = my_table[ key = input ].
 > this is a special variant of the more general
 > [Focus on the happy path or error handling, but not both](#focus-on-the-happy-path-or-error-handling-but-not-both).
 
-### Reference table
+### Reference table tables
 > [Clean ABAP](#clean-abap) > [Content](#content) > [Language](#language) > [This section](#reference-table-tables)
 
 | Topic                                                   | Reference     |
@@ -1307,7 +1307,7 @@ especially if you embed multiple variables in a text.
 DATA(message) = `Received an unexpected HTTP ` && status_code && ` with message ` && text.
 ```
 
-### Reference table
+### Reference table strings
 > [Clean ABAP](#clean-abap) > [Content](#content) > [Language](#language) > [This section](#reference-table-strings)
 
 | Topic                                                   | Reference     |
@@ -1441,7 +1441,7 @@ which is why we suggest it only as secondary solution.
 DATA(has_entries) = COND abap_bool( WHEN line IS NOT INITIAL THEN abap_true ).
 ```
 
-### Reference table
+### Reference table booleans
 > [Clean ABAP](#clean-abap) > [Content](#content) > [Language](#language) > [This section](#reference-table-booleans)
 
 | Topic                                                   | Reference     |
@@ -1558,7 +1558,7 @@ METHOD is_provided.
                     is_working = abap_true ).
 ENDMETHOD.
 ```
-### Reference table
+### Reference table conditions
 > [Clean ABAP](#clean-abap) > [Content](#content) > [Language](#language) > [This section](#reference-table-conditions)
 
 | Topic                                                   | Reference     |
@@ -1660,7 +1660,7 @@ IF <this>.
   IF <that>.
 ```
 
-### Reference table
+### Reference table ifs
 > [Clean ABAP](#clean-abap) > [Content](#content) > [Language](#language) > [This section](#reference-table-ifs)
 
 | Topic                                                         | Reference     |
@@ -1729,7 +1729,7 @@ DATA(object_name) = |{ class_name }\|{ interface_name }|.
 Some complex regular expressions become easier
 when you demonstrate to the reader how they are built up from more elementary pieces.
 
-### Reference_table
+### Reference_table regular expressions
 > [Clean ABAP](#clean-abap) > [Content](#content) > [Language](#language) > [This section](#reference-table-regular-expressions)
 
 | Topic                                                   | Reference     |
@@ -2138,7 +2138,7 @@ If there are no design-driven reasons for a unitary object,
 leave that decision to the consumer - he can still reach the same by means outside the constructor,
 for example with a factory.
 
-### Reference table
+### Reference table classes
 > [Clean ABAP](#clean-abap) > [Content](#content) > [Language](#language) > [This section](#reference-table-classes)
 
 | Topic                                                   | Reference     |
@@ -3124,7 +3124,7 @@ Prefer using an `IF` statement in combination with `CONTINUE` instead, since `CO
 > Based on the [section _Exiting Procedures_ in the ABAP Programming Guidelines](https://help.sap.com/doc/abapdocu_751_index_htm/7.51/en-US/index.htm?file=abenexit_procedure_guidl.htm).
 > Note that this contradicts the [keyword reference for `CHECK` in loops](https://help.sap.com/doc/abapdocu_752_index_htm/7.52/en-US/abapcheck_loop.htm).
 
-### Reference table
+### Reference table methods
 > [Clean ABAP](#clean-abap) > [Content](#content) > [Language](#language) > [This section](#reference-table-methods)
 
 | Topic                                                          | Reference     |
@@ -3568,7 +3568,7 @@ METHOD generate.
 ENDMETHOD.
 ```
 
-### Reference table
+### Reference table error handling
 > [Clean ABAP](#clean-abap) > [Content](#content) > [Language](#language) > [This section](#reference-table-error-handling)
 
 | Topic                                                                | Reference     |
@@ -3910,7 +3910,7 @@ MESSAGE e001(ad) INTO DATA(message). "#EC NEEDED
 Use program `ABAP_SLIN_PRAGMAS` or table `SLIN_DESC` to find the mapping between obsolete pseudo comments and the pragmas that 
 have replaced them.
 
-### Reference table
+### Reference table comments
 > [Clean ABAP](#clean-abap) > [Content](#content) > [Language](#language) > [This section](#reference-table-comments)
 
 | Topic                                                   | Reference     |
@@ -4357,7 +4357,7 @@ Chained assignments usually confuse the reader. Besides, the inline declaration 
 var1 = var2 = var3.
 ```
 
-### Reference table
+### Reference table formatting
 > [Clean ABAP](#clean-abap) > [Content](#content) > [Language](#language) > [This section](#reference-table-formatting)
 
 | Topic                                                              | Reference     |
@@ -5222,7 +5222,7 @@ ENDMETHOD.
 
 Instead of copy-pasting this over and over again.
 
-### Reference table
+### Reference table testing
 > [Clean ABAP](#clean-abap) > [Content](#content) > [Language](#language) > [This section](#reference-table-testing)
 
 | Topic                                                                 | Reference     |

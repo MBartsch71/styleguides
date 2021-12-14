@@ -48,6 +48,7 @@ The [Cheat Sheet](cheat-sheet/CheatSheet.md) is a print-optimized version.
   - [Prefer functional to procedural language constructs](#prefer-functional-to-procedural-language-constructs)
   - [Avoid obsolete language elements](#avoid-obsolete-language-elements)
   - [Use design patterns wisely](#use-design-patterns-wisely)
+  - [Reference table](#reference-table)
 - [Constants](#constants)
   - [Use constants instead of magic numbers](#use-constants-instead-of-magic-numbers)
   - [Prefer enumeration classes to constants interfaces](#prefer-enumeration-classes-to-constants-interfaces)
@@ -771,6 +772,8 @@ Where they are appropriate and provide noticeable benefit.
 Don't apply design patterns everywhere just for the sake of it.
 
 ### Reference table
+> [Clean ABAP](#clean-abap) > [Content](#content) > [Language](#language) > [This section](#reference-table)
+
 | Topic                                                   | Reference     |
 |---------------------------------------------------------|---------------|
 | - Mind the legacy                                       | 	|

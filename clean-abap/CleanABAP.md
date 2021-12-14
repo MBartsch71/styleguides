@@ -40,6 +40,7 @@ The [Cheat Sheet](cheat-sheet/CheatSheet.md) is a print-optimized version.
   - [Pick one word per concept](#pick-one-word-per-concept)
   - [Use pattern names only if you mean them](#use-pattern-names-only-if-you-mean-them)
   - [Avoid encodings, esp. Hungarian notation and prefixes](#avoid-encodings-esp-hungarian-notation-and-prefixes)
+  - [Reference table](#reference-tables-names)
 - [Language](#language)
   - [Mind the legacy](#mind-the-legacy)
   - [Mind the performance](#mind-the-performance)
@@ -593,7 +594,8 @@ ENDMETHOD.
 > [Avoid Encodings](sub-sections/AvoidEncodings.md)
 > describes the reasoning in depth.
 
-### Reference table
+### Reference table 
+> [Clean ABAP](#clean-abap) > [Content](#content) > [Names](#names) > [This section](#reference-tables-names)
 | Topic                                                   | Reference     |
 |---------------------------------------------------------|---------------|
 | - Use descriptive names                                 | [^CC] page 39, [^IP] chapter 5 / 6 |

@@ -40,7 +40,7 @@ The [Cheat Sheet](cheat-sheet/CheatSheet.md) is a print-optimized version.
   - [Pick one word per concept](#pick-one-word-per-concept)
   - [Use pattern names only if you mean them](#use-pattern-names-only-if-you-mean-them)
   - [Avoid encodings, esp. Hungarian notation and prefixes](#avoid-encodings-esp-hungarian-notation-and-prefixes)
-  - [Reference table](#reference-table)
+  - [Reference table](#reference-table-names)
 - [Language](#language)
   - [Mind the legacy](#mind-the-legacy)
   - [Mind the performance](#mind-the-performance)
@@ -48,16 +48,18 @@ The [Cheat Sheet](cheat-sheet/CheatSheet.md) is a print-optimized version.
   - [Prefer functional to procedural language constructs](#prefer-functional-to-procedural-language-constructs)
   - [Avoid obsolete language elements](#avoid-obsolete-language-elements)
   - [Use design patterns wisely](#use-design-patterns-wisely)
-  - [Reference table](#reference-table)
+  - [Reference table](#reference-table-language)
 - [Constants](#constants)
   - [Use constants instead of magic numbers](#use-constants-instead-of-magic-numbers)
   - [Prefer enumeration classes to constants interfaces](#prefer-enumeration-classes-to-constants-interfaces)
   - [If you don't use enumeration classes, group your constants](#if-you-dont-use-enumeration-classes-group-your-constants)
+  - [Reference table](#reference-table-constants)
 - [Variables](#variables)
   - [Prefer inline to up-front declarations](#prefer-inline-to-up-front-declarations)
   - [Don't declare inline in optional branches](#dont-declare-inline-in-optional-branches)
   - [Do not chain up-front declarations](#do-not-chain-up-front-declarations)
   - [Prefer REF TO to FIELD-SYMBOL](#prefer-ref-to-to-field-symbol)
+  - - [Reference table](#reference-table-variables)
 - [Tables](#tables)
   - [Use the right table type](#use-the-right-table-type)
   - [Avoid DEFAULT KEY](#avoid-default-key)
@@ -66,27 +68,33 @@ The [Cheat Sheet](cheat-sheet/CheatSheet.md) is a print-optimized version.
   - [Prefer READ TABLE to LOOP AT](#prefer-read-table-to-loop-at)
   - [Prefer LOOP AT WHERE to nested IF](#prefer-loop-at-where-to-nested-if)
   - [Avoid unnecessary table reads](#avoid-unnecessary-table-reads)
+  - - [Reference table](#reference-table-tables)
 - [Strings](#strings)
   - [Use ` to define literals](#use--to-define-literals)
   - [Use | to assemble text](#use--to-assemble-text)
+  - [Reference table](#reference-table-strings)
 - [Booleans](#booleans)
   - [Use Booleans wisely](#use-booleans-wisely)
   - [Use ABAP_BOOL for Booleans](#use-abap_bool-for-booleans)
   - [Use ABAP_TRUE and ABAP_FALSE for comparisons](#use-abap_true-and-abap_false-for-comparisons)
   - [Use XSDBOOL to set Boolean variables](#use-xsdbool-to-set-boolean-variables)
+  - - [Reference table](#reference-table-booleans)
 - [Conditions](#conditions)
   - [Try to make conditions positive](#try-to-make-conditions-positive)
   - [Prefer IS NOT to NOT IS](#prefer-is-not-to-not-is)
   - [Consider decomposing complex conditions](#consider-decomposing-complex-conditions)
   - [Consider extracting complex conditions](#consider-extracting-complex-conditions)
+  - - [Reference table](#reference-table-conditions)
 - [Ifs](#ifs)
   - [No empty IF branches](#no-empty-if-branches)
   - [Prefer CASE to ELSE IF for multiple alternative conditions](#prefer-case-to-else-if-for-multiple-alternative-conditions)
   - [Keep the nesting depth low](#keep-the-nesting-depth-low)
+  - - [Reference table](#reference-table-ifs)
 - [Regular expressions](#regular-expressions)
   - [Prefer simpler methods to regular expressions](#prefer-simpler-methods-to-regular-expressions)
   - [Prefer basis checks to regular expressions](#prefer-basis-checks-to-regular-expressions)
   - [Consider assembling complex regular expressions](#consider-assembling-complex-regular-expressions)
+  - [Reference table](#reference-table-regular-expressions)
 - [Classes](#classes)
   - [Classes: Object orientation](#classes-object-orientation)
     - [Prefer objects to static classes](#prefer-objects-to-static-classes)
@@ -104,6 +112,7 @@ The [Cheat Sheet](cheat-sheet/CheatSheet.md) is a print-optimized version.
     - [Prefer multiple static creation methods to optional parameters](#prefer-multiple-static-creation-methods-to-optional-parameters)
     - [Use descriptive names for multiple creation methods](#use-descriptive-names-for-multiple-creation-methods)
     - [Make singletons only where multiple instances don't make sense](#make-singletons-only-where-multiple-instances-dont-make-sense)
+    - [Reference table](#reference-table-classes)
 - [Methods](#methods)
   - [Calls](#calls)
     - [Don't call static methods through instance variables](#dont-call-static-methods-through-instance-variables)
@@ -141,12 +150,14 @@ The [Cheat Sheet](cheat-sheet/CheatSheet.md) is a print-optimized version.
     - [Fail fast](#fail-fast)
     - [CHECK vs. RETURN](#check-vs-return)
     - [Avoid CHECK in other positions](#avoid-check-in-other-positions)
+    - [Reference table](#reference-table-methods)
 - [Error Handling](#error-handling)
   - [Messages](#messages)
     - [Make messages easy to find](#make-messages-easy-to-find)
   - [Return Codes](#return-codes)
     - [Prefer exceptions to return codes](#prefer-exceptions-to-return-codes)
     - [Don't let failures slip through](#dont-let-failures-slip-through)
+    - [Reference table](#reference-table-error-handling)
   - [Exceptions](#exceptions)
     - [Exceptions are for errors, not for regular cases](#exceptions-are-for-errors-not-for-regular-cases)
     - [Use class-based exceptions](#use-class-based-exceptions)
@@ -161,6 +172,7 @@ The [Cheat Sheet](cheat-sheet/CheatSheet.md) is a print-optimized version.
     - [Prefer RAISE EXCEPTION NEW to RAISE EXCEPTION TYPE](#prefer-raise-exception-new-to-raise-exception-type)
   - [Catching](#catching)
     - [Wrap foreign exceptions instead of letting them invade your code](#wrap-foreign-exceptions-instead-of-letting-them-invade-your-code)
+    - [Reference table](#reference-table-exceptions)
 - [Comments](#comments)
   - [Express yourself in code, not in comments](#express-yourself-in-code-not-in-comments)
   - [Comments are no excuse for bad names](#comments-are-no-excuse-for-bad-names)
@@ -175,6 +187,7 @@ The [Cheat Sheet](cheat-sheet/CheatSheet.md) is a print-optimized version.
   - [Don't duplicate message texts as comments](#dont-duplicate-message-texts-as-comments)
   - [ABAP Doc only for public APIs](#abap-doc-only-for-public-apis)
   - [Prefer pragmas to pseudo comments](#prefer-pragmas-to-pseudo-comments)
+  - [Reference table](#reference-table-comments)
 - [Formatting](#formatting)
   - [Be consistent](#be-consistent)
   - [Optimize for reading, not for writing](#optimize-for-reading-not-for-writing)
@@ -197,6 +210,7 @@ The [Cheat Sheet](cheat-sheet/CheatSheet.md) is a print-optimized version.
   - [Indent in-line declarations like method calls](#indent-in-line-declarations-like-method-calls)
   - [Don't align type clauses](#dont-align-type-clauses)
   - [Don't chain assignments](#dont-chain-assignments)
+  - [Reference table](#reference-table-formatting)
 - [Testing](#testing)
   - [Principles](#principles)
     - [Write testable code](#write-testable-code)
@@ -242,6 +256,7 @@ The [Cheat Sheet](cheat-sheet/CheatSheet.md) is a print-optimized version.
     - [Use FAIL to check for expected exceptions](#use-fail-to-check-for-expected-exceptions)
     - [Forward unexpected exceptions instead of catching and failing](#forward-unexpected-exceptions-instead-of-catching-and-failing)
     - [Write custom asserts to shorten code and avoid duplication](#write-custom-asserts-to-shorten-code-and-avoid-duplication)
+    - [Reference table](#reference-table-testing)
 
 ## How to
 
@@ -595,9 +610,9 @@ ENDMETHOD.
 > [Avoid Encodings](sub-sections/AvoidEncodings.md)
 > describes the reasoning in depth.
 
-### Reference table 
+### Reference table names
 
-> [Clean ABAP](#clean-abap) > [Content](#content) > [Names](#names) > [This section](#reference-table)
+> [Clean ABAP](#clean-abap) > [Content](#content) > [Names](#names) > [This section](#reference-table-names)
 
 | Topic                                                   | Reference     |
 |---------------------------------------------------------|---------------|
@@ -771,8 +786,8 @@ that lists obsolete language elements, for example
 Where they are appropriate and provide noticeable benefit.
 Don't apply design patterns everywhere just for the sake of it.
 
-### Reference table
-> [Clean ABAP](#clean-abap) > [Content](#content) > [Language](#language) > [This section](#reference-table)
+### Reference table language
+> [Clean ABAP](#clean-abap) > [Content](#content) > [Language](#language) > [This section](#reference-table-language)
 
 | Topic                                                   | Reference     |
 |---------------------------------------------------------|---------------|
@@ -899,6 +914,8 @@ ENDDO.
 > Read more in _Chapter 17: Smells and Heuristics: G27: Structure over Convention_ of [Robert C. Martin's _Clean Code_].
 
 ### Reference table
+> [Clean ABAP](#clean-abap) > [Content](#content) > [Language](#language) > [This section](#reference-table-constants)
+
 | Topic                                                        | Reference     |
 |--------------------------------------------------------------|---------------|
 | - Use constants instead of magic numbers                     | [^CC] chapter 17 - page 300 |
@@ -1048,6 +1065,8 @@ Similarly, speed is not an issue. As a consequence, there is no performance-rela
 > [_Accessing Data Objects Dynamically_ in the ABAP Programming Guidelines](https://help.sap.com/doc/abapdocu_751_index_htm/7.51/en-US/index.htm?file=abendyn_access_data_obj_guidl.htm).
 
 ### Reference table
+> [Clean ABAP](#clean-abap) > [Content](#content) > [Language](#language) > [This section](#reference-table-variables)
+
 | Topic                                                   | Reference     |
 |---------------------------------------------------------|---------------|
 | - Prefer inline to up-front declarations                | 	|
@@ -1232,6 +1251,8 @@ DATA(row) = my_table[ key = input ].
 > [Focus on the happy path or error handling, but not both](#focus-on-the-happy-path-or-error-handling-but-not-both).
 
 ### Reference table
+> [Clean ABAP](#clean-abap) > [Content](#content) > [Language](#language) > [This section](#reference-table-tables)
+
 | Topic                                                   | Reference     |
 |---------------------------------------------------------|---------------|
 | - Use the right table type                              | 	|
@@ -1287,6 +1308,8 @@ DATA(message) = `Received an unexpected HTTP ` && status_code && ` with message 
 ```
 
 ### Reference table
+> [Clean ABAP](#clean-abap) > [Content](#content) > [Language](#language) > [This section](#reference-table-strings)
+
 | Topic                                                   | Reference     |
 |---------------------------------------------------------|---------------|
 | - Use \` to define literals                             | 	|
@@ -1419,6 +1442,8 @@ DATA(has_entries) = COND abap_bool( WHEN line IS NOT INITIAL THEN abap_true ).
 ```
 
 ### Reference table
+> [Clean ABAP](#clean-abap) > [Content](#content) > [Language](#language) > [This section](#reference-table-booleans)
+
 | Topic                                                   | Reference     |
 |---------------------------------------------------------|---------------|
 | - Use Booleans wisely                                   | [^CC] chapter 3 page 40|
@@ -1534,6 +1559,8 @@ METHOD is_provided.
 ENDMETHOD.
 ```
 ### Reference table
+> [Clean ABAP](#clean-abap) > [Content](#content) > [Language](#language) > [This section](#reference-table-conditions)
+
 | Topic                                                   | Reference     |
 |---------------------------------------------------------|---------------|
 | - Try to make conditions positive                       | [^CC] chapter 17 page 302	|
@@ -1634,6 +1661,8 @@ IF <this>.
 ```
 
 ### Reference table
+> [Clean ABAP](#clean-abap) > [Content](#content) > [Language](#language) > [This section](#reference-table-ifs)
+
 | Topic                                                         | Reference     |
 |---------------------------------------------------------------|---------------|
 | - No empty IF branches                                        | 	|
@@ -1701,6 +1730,8 @@ Some complex regular expressions become easier
 when you demonstrate to the reader how they are built up from more elementary pieces.
 
 ### Reference_table
+> [Clean ABAP](#clean-abap) > [Content](#content) > [Language](#language) > [This section](#reference-table-regular-expressions)
+
 | Topic                                                   | Reference     |
 |---------------------------------------------------------|---------------|
 | - Prefer simpler methods to regular expressions         | 	|
@@ -2108,6 +2139,8 @@ leave that decision to the consumer - he can still reach the same by means outsi
 for example with a factory.
 
 ### Reference table
+> [Clean ABAP](#clean-abap) > [Content](#content) > [Language](#language) > [This section](#reference-table-classes)
+
 | Topic                                                   | Reference     |
 |---------------------------------------------------------|---------------|
 | - Prefer objects to static classes                      |[^CC] chapter17 page 296   |
@@ -3092,6 +3125,8 @@ Prefer using an `IF` statement in combination with `CONTINUE` instead, since `CO
 > Note that this contradicts the [keyword reference for `CHECK` in loops](https://help.sap.com/doc/abapdocu_752_index_htm/7.52/en-US/abapcheck_loop.htm).
 
 ### Reference table
+> [Clean ABAP](#clean-abap) > [Content](#content) > [Language](#language) > [This section](#reference-table-methods)
+
 | Topic                                                          | Reference     |
 |----------------------------------------------------------------|---------------|
 | - Don't call static methods through instance variables         | 	|
@@ -3534,6 +3569,8 @@ ENDMETHOD.
 ```
 
 ### Reference table
+> [Clean ABAP](#clean-abap) > [Content](#content) > [Language](#language) > [This section](#reference-table-error-handling)
+
 | Topic                                                                | Reference     |
 |----------------------------------------------------------------------|---------------|
 | - Make messages easy to find                                         | [^CC] chapter 7 page 107 |
@@ -3874,6 +3911,8 @@ Use program `ABAP_SLIN_PRAGMAS` or table `SLIN_DESC` to find the mapping between
 have replaced them.
 
 ### Reference table
+> [Clean ABAP](#clean-abap) > [Content](#content) > [Language](#language) > [This section](#reference-table-comments)
+
 | Topic                                                   | Reference     |
 |---------------------------------------------------------|---------------|
 | - Express yourself in code, not in comments             | [^CC] chapter 4 page 55  |
@@ -4319,6 +4358,8 @@ var1 = var2 = var3.
 ```
 
 ### Reference table
+> [Clean ABAP](#clean-abap) > [Content](#content) > [Language](#language) > [This section](#reference-table-formatting)
+
 | Topic                                                              | Reference     |
 |--------------------------------------------------------------------|---------------|
 | - Be consistent                                                    | [^CC] chapter 5 page 75 |
@@ -5182,6 +5223,8 @@ ENDMETHOD.
 Instead of copy-pasting this over and over again.
 
 ### Reference table
+> [Clean ABAP](#clean-abap) > [Content](#content) > [Language](#language) > [This section](#reference-table-testing)
+
 | Topic                                                                 | Reference     |
 |-----------------------------------------------------------------------|---------------|
 | - Write testable code                                                 |   |

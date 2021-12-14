@@ -595,7 +595,7 @@ ENDMETHOD.
 > describes the reasoning in depth.
 
 ### Reference table 
-> [Clean ABAP](#clean-abap) > [Content](#content) > [Names](#names) > [This section](#reference-tables-names)
+> [Clean ABAP](#clean-abap) > [Content](#content) > [Names](#names) > [This section](#reference-table-names)
 
 | Topic                                                   | Reference     |
 |---------------------------------------------------------|---------------|

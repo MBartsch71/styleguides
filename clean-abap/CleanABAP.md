@@ -596,6 +596,7 @@ ENDMETHOD.
 
 ### Reference table 
 > [Clean ABAP](#clean-abap) > [Content](#content) > [Names](#names) > [This section](#reference-tables-names)
+
 | Topic                                                   | Reference     |
 |---------------------------------------------------------|---------------|
 | - Use descriptive names                                 | [^CC] page 39, [^IP] chapter 5 / 6 |

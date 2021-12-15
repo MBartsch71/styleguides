@@ -1313,7 +1313,7 @@ DATA(message) = `Received an unexpected HTTP ` && status_code && ` with message 
 | Topic                                                   | Reference     | Opinion |
 |---------------------------------------------------------|---------------|---------|
 | - Use \` to define literals                             |   | |
-| - Use | to assemble text   					          |   | |
+| - Use \| to assemble text   					          |   | |
 
 ## Booleans
 

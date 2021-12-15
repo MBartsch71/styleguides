@@ -626,7 +626,7 @@ ENDMETHOD.
 | - Avoid noise words such as "data", "info", "object"    |[^CC] page 29 | |
 | - Pick one word per concept                             |[^CC] page 26 | |
 | - Use pattern names only if you mean them               |[^CC] page 27 | |
-| - Avoid encodings, esp. Hungarian notation and prefixes |[^CC] page 23, [^IP] chapter 6 page 50 |Depends on programming convention, at work I have to use, private I dont't|
+| - Avoid encodings, esp. Hungarian notation and prefixes |[^CC] page 23, [^IP] chapter 6 page 50 |Depends on programming convention, at work I have to use, private I do not use |
 
 ## Language
 
@@ -1255,7 +1255,7 @@ DATA(row) = my_table[ key = input ].
 
 | Topic                                                   | Reference     | Opinion |
 |---------------------------------------------------------|---------------|---------|
-| - Use the right table type                              |   |Imho sorted tables makes you the life more easy, where appropriate|
+| - Use the right table type                              |   |Imho sorted tables makes your life more easy, where appropriate|
 | - Avoid DEFAULT KEY            				          |   |This I read also somewhere else, in the ABAP Performance book and from then I practice it|
 | - Prefer INSERT INTO TABLE to APPEND TO                 |   |This can still be improved, but the more sorted tables I use the more often I will use it|
 | - Prefer READ TABLE to LOOP AT                          |   |Usually I use the functional expressions, where I can|

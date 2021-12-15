@@ -616,17 +616,17 @@ ENDMETHOD.
 
 | Topic                                                   | Reference     | Opinion |
 |---------------------------------------------------------|---------------|---------|
-| - Use descriptive names                                 |[^CC] page 39, [^IP] chapter 5 / 6 | |
-| - Prefer solution domain and problem domain terms       |[^CC] page 27 | |
+| - Use descriptive names                                 |[^CC] page 39, [^IP] chapter 5 / 6 |Agree and I try|
+| - Prefer solution domain and problem domain terms       |[^CC] page 27 |I do so|
 | - Use plural                                            |[^IP] chapter 6, page 51 | |
-| - Use pronounceable names                               |[^CC] page 21 | |
-| - Avoid abbreviations                                   |[^CC] page 25, [^IP] chapter 6 page 59 | |
-| - Use same abbreviations everywhere                     |[^CC] page 26 | |
+| - Use pronounceable names                               |[^CC] page 21 |Sometimes hard but it's possible|
+| - Avoid abbreviations                                   |[^CC] page 25, [^IP] chapter 6 page 59 |As long as its fits in 30 characters |
+| - Use same abbreviations everywhere                     |[^CC] page 26 |Agree|
 | - Use nouns for classes and verbs for methods           |[^CC] page 25, [^IP] chapter 5 / 6 | |
 | - Avoid noise words such as "data", "info", "object"    |[^CC] page 29 | |
 | - Pick one word per concept                             |[^CC] page 26 | |
 | - Use pattern names only if you mean them               |[^CC] page 27 | |
-| - Avoid encodings, esp. Hungarian notation and prefixes |[^CC] page 23, [^IP] chapter 6 page 50 | |
+| - Avoid encodings, esp. Hungarian notation and prefixes |[^CC] page 23, [^IP] chapter 6 page 50 |Depends on programming convention, at work I have to use, private I dont't|
 
 ## Language
 
@@ -791,12 +791,12 @@ Don't apply design patterns everywhere just for the sake of it.
 
 | Topic                                                   | Reference     | Opinion |
 |---------------------------------------------------------|---------------|---------|
-| - Mind the legacy                                       |  |  |
-| - Mind the performance						          |  |  |
-| - Prefer object orientation to procedural programming   |  |  |
-| - Prefer functional to procedural language constructs   |  |  |
-| - Avoid obsolete language elements                      |  |  |
-| - Use design patterns wisely                            |  |  |
+| - Mind the legacy                                       |  |at CSS not so important, but as a consultant or software company it's crucial|
+| - Mind the performance						          |  |especially at new systems, till now usually the DB access was the bottleneck|
+| - Prefer object orientation to procedural programming   |  |Clearly|
+| - Prefer functional to procedural language constructs   |  |With new ABAP constructs its fun :-)|
+| - Avoid obsolete language elements                      |  |Especially in ABAP you need a cheat sheet for obsolete elements|
+| - Use design patterns wisely                            |  |This is still a way to go|
 
 ## Constants
 
@@ -918,9 +918,9 @@ ENDDO.
 
 | Topic                                                        | Reference     | Opinion |
 |--------------------------------------------------------------|---------------|---------|
-| - Use constants instead of magic numbers                     |[^CC] chapter 17 - page 300 | |
-| - Prefer enumeration classes to constants interfaces         |   | |
-| - If you don't use enumeration classes, group your constants |[^IP] chapter 6 - page 58 | |
+| - Use constants instead of magic numbers                     |[^CC] chapter 17 - page 300 |very important, also for where used analysis|
+| - Prefer enumeration classes to constants interfaces         |   |I will when I work on a system which supports this |
+| - If you don't use enumeration classes, group your constants |[^IP] chapter 6 - page 58 |usually we use Abstract classes and group the constants in meaningful parts|
 
 ## Variables
 
@@ -1069,10 +1069,10 @@ Similarly, speed is not an issue. As a consequence, there is no performance-rela
 
 | Topic                                                   | Reference     | Opinion |
 |---------------------------------------------------------|---------------|---------|
-| - Prefer inline to up-front declarations                |   | |
-| - Don't declare inline in optional branches	          |   | |
-| - Do not chain up-front declarations                    |   | |
-| - Prefer REF TO to FIELD-SYMBOL					      |   | |
+| - Prefer inline to up-front declarations                |   |yes, sometimes you have to declare explicitly when you want to have a certain type |
+| - Don't declare inline in optional branches	          |   |Anyway optional branches I try to avoid|
+| - Do not chain up-front declarations                    |   |That's a pain in the a**, I never liked this|
+| - Prefer REF TO to FIELD-SYMBOL					      |   |I tried in the last days and I like it|
 
 ## Tables
 
@@ -1255,12 +1255,12 @@ DATA(row) = my_table[ key = input ].
 
 | Topic                                                   | Reference     | Opinion |
 |---------------------------------------------------------|---------------|---------|
-| - Use the right table type                              |   | |
-| - Avoid DEFAULT KEY            				          |   | |
-| - Prefer INSERT INTO TABLE to APPEND TO                 |   | |
-| - Prefer READ TABLE to LOOP AT                          |   | |
-| - Prefer LOOP AT WHERE to nested IF                     |   | |
-| - Avoid unnecessary table reads                         |   | |
+| - Use the right table type                              |   |Imho sorted tables makes you the life more easy, where appropriate|
+| - Avoid DEFAULT KEY            				          |   |This I read also somewhere else, in the ABAP Performance book and from then I practice it|
+| - Prefer INSERT INTO TABLE to APPEND TO                 |   |This can still be improved, but the more sorted tables I use the more often I will use it|
+| - Prefer READ TABLE to LOOP AT                          |   |Usually I use the functional expressions, where I can|
+| - Prefer LOOP AT WHERE to nested IF                     |   |Agree|
+| - Avoid unnecessary table reads                         |   |Agree|
 
 ## Strings
 
@@ -1312,8 +1312,8 @@ DATA(message) = `Received an unexpected HTTP ` && status_code && ` with message 
 
 | Topic                                                   | Reference     | Opinion |
 |---------------------------------------------------------|---------------|---------|
-| - Use \` to define literals                             |   | |
-| - Use \| to assemble text   					          |   | |
+| - Use \` to define literals                             |   |This was actually new to me, sometimes I had to ( Reduce statement with strings) but I adopted this idea|
+| - Use \| to assemble text   					          |   |Clearly|
 
 ## Booleans
 
@@ -1447,9 +1447,9 @@ DATA(has_entries) = COND abap_bool( WHEN line IS NOT INITIAL THEN abap_true ).
 | Topic                                                   | Reference     | Opinion |
 |---------------------------------------------------------|---------------|---------|
 | - Use Booleans wisely                                   |[^CC] chapter 3 page 40, [^IP] chapter 6 page 53 | |
-| - Use ABAP_BOOL for Booleans					          || |
-| - Use ABAP_TRUE and ABAP_FALSE for comparisons          || |
-| - Use XSDBOOL to set Boolean variables                  || |
+| - Use ABAP_BOOL for Booleans					          ||Yes that I use every time|
+| - Use ABAP_TRUE and ABAP_FALSE for comparisons          ||Also this I use  |
+| - Use XSDBOOL to set Boolean variables                  ||Very nice expression, I like it|
 
 ## Conditions
 
@@ -1563,10 +1563,10 @@ ENDMETHOD.
 
 | Topic                                                   | Reference     | Opinion |
 |---------------------------------------------------------|---------------|---------|
-| - Try to make conditions positive                       |[^CC] chapter 17 page 302 | |
-| - Prefer IS NOT to NOT IS     				          |   | |
-| - Consider decomposing complex conditions               |[^CC] chapter 17 page 299 | |
-| - Consider extracting complex conditions                |[^IP] chapter 5 page 36 | |
+| - Try to make conditions positive                       |[^CC] chapter 17 page 302 |Ja, I just say double negation :-) |
+| - Prefer IS NOT to NOT IS     				          |   |Agree |
+| - Consider decomposing complex conditions               |[^CC] chapter 17 page 299 |Also this is a challenging thing which I will work on in the future|
+| - Consider extracting complex conditions                |[^IP] chapter 5 page 36 |I try to make conditions as simple as possible, this is also important as it reduces the Unit test you have to write|
 
 ## Ifs
 
@@ -1665,9 +1665,9 @@ IF <this>.
 
 | Topic                                                         | Reference     | Opinion |
 |---------------------------------------------------------------|---------------|---------|
-| - No empty IF branches                                        | 	| |
-| - Prefer CASE to ELSE IF for multiple alternative conditions  |   | |
-| - Keep the nesting depth low                                  |[^IP] chapter 5 page 36 | |
+| - No empty IF branches                                        | 	|Yes this is a waste|
+| - Prefer CASE to ELSE IF for multiple alternative conditions  |   |IF I use multiple alternative conditions I do it with CASE or recently with COND and SWITCH|
+| - Keep the nesting depth low                                  |[^IP] chapter 5 page 36 |Agree completely|
 
 ## Regular expressions
 
@@ -1734,9 +1734,9 @@ when you demonstrate to the reader how they are built up from more elementary pi
 
 | Topic                                                   | Reference     | Opinion |
 |---------------------------------------------------------|---------------|---------|
-| - Prefer simpler methods to regular expressions         || |
-| - Prefer basis checks to regular expressions	          || |
-| - Consider assembling complex regular expressions       || |
+| - Prefer simpler methods to regular expressions         ||Simple regexes are ok, but also some complex ones I use sometimes|
+| - Prefer basis checks to regular expressions	          ||Here I am more on the Regex side|
+| - Consider assembling complex regular expressions       ||Agree|
 
 ## Classes
 
@@ -2143,19 +2143,19 @@ for example with a factory.
 
 | Topic                                                   | Reference     | Opinion |
 |---------------------------------------------------------|---------------|---------|
-| - Prefer objects to static classes                      |[^CC] chapter17 page 296| |
-| - Prefer composition to inheritance       	          |[^IP] chapter 5 page 24| |
-| - Don't mix stateful and stateless in the same class    || |
-| - Global by default, local only where appropriate       |[^IP] chapter 5 page 35| |
-| - FINAL if not designed for inheritance                 || |
-| - Members PRIVATE by default, PROTECTED only if needed  || |
-| - Consider using immutable instead of getter            |[^IP] chapter 8 page 95| |
-| - Use READ-ONLY sparingly                               || |
-| - Prefer NEW to CREATE OBJECT                           || |
-| - If your global class is CREATE PRIVATE, leave the CONSTRUCTOR public || |
-| - Prefer multiple static creation methods to optional parameters || |
+| - Prefer objects to static classes                      |[^CC] chapter17 page 296|I try to avoid static classes|
+| - Prefer composition to inheritance       	          |[^IP] chapter 5 page 24|Usually I use composition although inheritance is sometimes appropriate |
+| - Don't mix stateful and stateless in the same class    ||This I try to avoid|
+| - Global by default, local only where appropriate       |[^IP] chapter 5 page 35|This depends on the use case, but for productive code we use global classes|
+| - FINAL if not designed for inheritance                 ||I use FINAL seldom, just if I really want to exclude inheritance|
+| - Members PRIVATE by default, PROTECTED only if needed  ||Fully agree|
+| - Consider using immutable instead of getter            |[^IP] chapter 8 page 95|This is a sensible topic, usually i use getters, so I can have the member variables private, If I see a global variable and then its READ ONLY, I don't see the sense|
+| - Use READ-ONLY sparingly                               ||This conflicts with the point above|
+| - Prefer NEW to CREATE OBJECT                           ||I never use CREATE OBJECT anymore|
+| - If your global class is CREATE PRIVATE, leave the CONSTRUCTOR public ||Or use other instantiation techniques|
+| - Prefer multiple static creation methods to optional parameters ||Interesting approach, I like it|
 | - Use descriptive names for multiple creation methods            || |
-| - Make singletons only where multiple instances don't make sense || |
+| - Make singletons only where multiple instances don't make sense ||Ja, singleton i some rare cases can be appropriate|
 
 ## Methods
 
@@ -3129,31 +3129,31 @@ Prefer using an `IF` statement in combination with `CONTINUE` instead, since `CO
 
 | Topic                                                          | Reference     | Opinion |
 |----------------------------------------------------------------|---------------|---------|
-| - Don't call static methods through instance variables         | 	| |
-| - Prefer functional to procedural calls                        |  | |
-| - Omit RECEIVING                                               |  | |
+| - Don't call static methods through instance variables         | 	|Ja, for this you have static methods, to call it without an instance|
+| - Prefer functional to procedural calls                        |  |Definitely|
+| - Omit RECEIVING                                               |  |The next 4 points are clear to me|
 | - Omit the optional keyword EXPORTING                          |  | |
 | - Omit the parameter name in single parameter calls            |  | |
 | - Omit the self-reference me when calling an instance method   |  | |
 | - Prefer instance to static methods                            |  | |
-| - Public instance methods should be part of an interface       |  | |
-| - Aim for few IMPORTING parameters, at best less than three    |  | |
+| - Public instance methods should be part of an interface       |  |Depends on the use case, but by default I agree|
+| - Aim for few IMPORTING parameters, at best less than three    |  |Usually I use then objects or at least structures|
 | - Split methods instead of adding OPTIONAL parameters          |  | |
-| - Use PREFERRED PARAMETER sparingly                            |  | |
+| - Use PREFERRED PARAMETER sparingly                            |  |Very very rare I use this|
 | - Prefer RETURNING to EXPORTING                                |  | |
-| - RETURNING large tables is usually okay                       |  | |
-| - Use either RETURNING or EXPORTING or CHANGING, but not a combination |  | |
+| - RETURNING large tables is usually okay                       |  |I made the same observation|
+| - Use either RETURNING or EXPORTING or CHANGING, but not a combination |  ||
 | - Use CHANGING sparingly, where suited                         |  | |
 | - Split method instead of Boolean input parameter              |  | |
-| - Consider calling the RETURNING parameter RESULT              |  | |
-| - Clear or overwrite EXPORTING reference parameters            |  | |
+| - Consider calling the RETURNING parameter RESULT              |  |This I adopted from the Refactoring book by Martin Fowler, it makes the life simpler ;-)|
+| - Clear or overwrite EXPORTING reference parameters            |  |I don't use exporting, so no danger|
 | - Do one thing, do it well, do it only                         |  | |
 | - Focus on the happy path or error handling, but not both      |  | |
 | - Descend one level of abstraction                             |  | |
 | - Keep methods small                                           |  | |
-| - Fail fast                                                    |  | |
-| - CHECK vs. RETURN                                             |  | |
-| - void CHECK in other positions                                |  | |
+| - Fail fast                                                    |  |Ja, I usually try to use Guard clauses|
+| - CHECK vs. RETURN                                             |  |I use check usually in Loops, even if it is sometimes difficult to understand, because the reader must to be familiar with the CHECK command|
+| - avoid CHECK in other positions                               |  | |
 
 ## Error Handling
 
@@ -3573,20 +3573,20 @@ ENDMETHOD.
 
 | Topic                                                                | Reference     | Opinion |
 |----------------------------------------------------------------------|---------------|---------|
-| - Make messages easy to find                                         | [^CC] chapter 7 page 107 | |
+| - Make messages easy to find                                         | [^CC] chapter 7 page 107 |I prefer the exxx(msgclass) form, there you can see quickly the message F2 in eclipse |
 | - Prefer exceptions to return codes			                       | [^CC] chapter 3 page 46, chapter 7 page 104 | | 
 | - Don't let failures slip through                                    |   | |
-| - Exceptions are for errors, not for regular cases                   | [^CC] chapter 7 page 109 | |
-| - Use class-based exceptions                                         | [^CC] chapter 7 page 107 | |
+| - Exceptions are for errors, not for regular cases                   | [^CC] chapter 7 page 109 |Even if it's tempting to use exceptions for control flow |
+| - Use class-based exceptions                                         | [^CC] chapter 7 page 107 |Definitely|
 | - Use own super classes                                              |   | |
 | - Throw one type of exception                                        |   | |
 | - Use sub-classes to enable callers to distinguish error situations  |   | |
-| - Throw CX_STATIC_CHECK for manageable exceptions                    |   | |
+| - Throw CX_STATIC_CHECK for manageable exceptions                    |   |Can put some dependencies to the code, makes also the maintenance more hard, if I have the full control over the code, I prefer NO_CHECK, there I can decide where to catch|
 | - Throw CX_NO_CHECK for usually unrecoverable situations             | [^CC] chapter 7 page 106 | |
 | - Consider CX_DYNAMIC_CHECK for avoidable exceptions                 |   | |
 | - Dump for totally unrecoverable situations                          |   | |
-| - Prefer RAISE EXCEPTION NEW to RAISE EXCEPTION TYPE                 |   | |
-| - Wrap foreign exceptions instead of letting them invade your code   |   | |
+| - Prefer RAISE EXCEPTION NEW to RAISE EXCEPTION TYPE                 |   |This is an interesting idea, I have to analyze this in more deep|
+| - Wrap foreign exceptions instead of letting them invade your code   |   |Ja, usually this I do |
 
 ## Comments
 
@@ -3915,14 +3915,14 @@ have replaced them.
 
 | Topic                                                   | Reference     | Opinion |
 |---------------------------------------------------------|---------------|---------|
-| - Express yourself in code, not in comments             | [^CC] chapter 4 page 55 | |
-| - Comments are no excuse for bad names		          |   | |
+| - Express yourself in code, not in comments             | [^CC] chapter 4 page 55 |Agree, but if the code become to complex just because of the attempt to avoid comments, then I thing it is OK to write comments|
+| - Comments are no excuse for bad names		          |   |Agree|
 | - Use methods instead of comments to segment your code  | [^CC] chapter 4 page 67 | |
-| - Write comments to explain the why, not the what       | [^CC] chapter 4 page 55ff. | |
+| - Write comments to explain the why, not the what       | [^CC] chapter 4 page 55ff. |Exactly so I use comments|
 | - Design goes into the design documents, not the code   | [^CC] chapter 4 page 63 | |
 | - Comment with ", not with *                            |   | |
 | - Put comments before the statement they relate to      |   | |
-| - Delete code instead of commenting it                  | [^CC] chapter 4 page 68 | |
+| - Delete code instead of commenting it                  | [^CC] chapter 4 page 68 |Ja, this cost a bit of courage but after 10 times you get accommodate to this|
 | - Use FIXME, TODO, and XXX and add your ID              | [^CC] chapter 4 page 58 | |
 | - Don't add method signature and end-of comments        | [^CC] chapter 4 page 67 | |
 | - Don't duplicate message texts as comments             | [^CC] chapter 4 page 60 | |
@@ -4366,7 +4366,7 @@ var1 = var2 = var3.
 | - Optimize for reading, not for writing	                         | [^CC] chapter 5 page 77 | |
 | - Use the Pretty Printer before activating                         |   | |
 | - Use your Pretty Printer team settings                            |   | |
-| - No more than one statement per line                              |   | |
+| - No more than one statement per line                              |   |Ja there I know also colleagues who like to put more statements in one line|
 | - Stick to a reasonable line length                                | [^CC] chapter 5 page 77 | |
 | - Condense your code                                               |   | |
 | - Add a single blank line to separate things, but not more         | [^CC] chapter 5 page 78 | |
@@ -5227,7 +5227,7 @@ Instead of copy-pasting this over and over again.
 
 | Topic                                                                 | Reference     | Opinion |
 |-----------------------------------------------------------------------|---------------|---------|
-| - Write testable code                                                 |   | |
+| - Write testable code                                                 |   |I usually to TDD|
 | - Enable others to mock you                                           |   | |
 | - Readability rules                                                   | [^CC] chapter 9 page 124 | |
 | - Don't make copies or write test reports                             |   | |
@@ -5235,21 +5235,21 @@ Instead of copy-pasting this over and over again.
 | - Don't obsess about coverage                                         |   | |
 | - Call local test classes by their purpose                            | [^CC] chapter 17 page 313 | |
 | - Put tests in local classes                                          |   | |
-| - Put help methods in help classes                                    |   | |
+| - Put help methods in help classes                                    |   |or in the local parts of the global class|
 | - How to execute test classes                                         |   | |
 | - Name the code under test meaningfully, or default to CUT            |   | |
-| - Test against interfaces, not implementations                        |   | |
+| - Test against interfaces, not implementations                        |   |THis was also a new approach for me, but I guess this is a good way|
 | - Extract the call to the code under test to its own method           |   | |
 | - Use dependency inversion to inject test doubles                     |   | |
-| - Consider to use the tool ABAP test double                           |   | |
+| - Consider to use the tool ABAP test double                           |   |Sometimes it seems a bit unreadable in comparison with the own written mock data, here I am not so sure|
 | - Exploit the test tools                                              |   | |
-| - Use test seams as temporary workaround                              |   | |
+| - Use test seams as temporary workaround                              |   |Till now I didn't need this|
 | - Use LOCAL FRIENDS to access the dependency-inverting constructor    |   | |
 | - Don't misuse LOCAL FRIENDS to invade the tested code                |   | |
 | - Don't change the productive code to make the code testable          |   | |
 | - Don't sub-class to mock methods                                     |   | |
 | - Don't mock stuff that's not needed                                  |   | |
-| - Don't build test frameworks                                         |   | |
+| - Don't build test frameworks                                         |   |This ideas comes sometimes in my mind, but seems that I was right to not try to build something like this|
 | - Test method names: reflect what's given and expected                |   | |
 | - "When" is exactly one call                                          |   | |
 | - Don't add a TEARDOWN unless you really need it                      |   | |

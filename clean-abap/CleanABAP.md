@@ -614,19 +614,19 @@ ENDMETHOD.
 
 > [Clean ABAP](#clean-abap) > [Content](#content) > [Names](#names) > [This section](#reference-table-names)
 
-| Topic                                                   | Reference     |
-|---------------------------------------------------------|---------------|
-| - Use descriptive names                                 | [^CC] page 39, [^IP] chapter 5 / 6 |
-| - Prefer solution domain and problem domain terms       | [^CC] page 27 |
-| - Use plural                                            | [^IP] chapter 6, page 51            |
-| - Use pronounceable names                               | [^CC] page 21 |
-| - Avoid abbreviations                                   | [^CC] page 25, [^IP] chapter 6 page 59 |
-| - Use same abbreviations everywhere                     | [^CC] page 26 |
-| - Use nouns for classes and verbs for methods           | [^CC] page 25, [^IP] chapter 5 / 6 |
-| - Avoid noise words such as "data", "info", "object"    | [^CC] page 29 |
-| - Pick one word per concept                             | [^CC] page 26 |
-| - Use pattern names only if you mean them               | [^CC] page 27 |
-| - Avoid encodings, esp. Hungarian notation and prefixes | [^CC] page 23, [^IP] chapter 6 page 50 |
+| Topic                                                   | Reference     | Opinion |
+|---------------------------------------------------------|---------------|---------|
+| - Use descriptive names                                 |[^CC] page 39, [^IP] chapter 5 / 6 | |
+| - Prefer solution domain and problem domain terms       |[^CC] page 27 | |
+| - Use plural                                            |[^IP] chapter 6, page 51 | |
+| - Use pronounceable names                               |[^CC] page 21 | |
+| - Avoid abbreviations                                   |[^CC] page 25, [^IP] chapter 6 page 59 | |
+| - Use same abbreviations everywhere                     |[^CC] page 26 | |
+| - Use nouns for classes and verbs for methods           |[^CC] page 25, [^IP] chapter 5 / 6 | |
+| - Avoid noise words such as "data", "info", "object"    |[^CC] page 29 | |
+| - Pick one word per concept                             |[^CC] page 26 | |
+| - Use pattern names only if you mean them               |[^CC] page 27 | |
+| - Avoid encodings, esp. Hungarian notation and prefixes |[^CC] page 23, [^IP] chapter 6 page 50 | |
 
 ## Language
 
@@ -789,14 +789,14 @@ Don't apply design patterns everywhere just for the sake of it.
 ### Reference table language
 > [Clean ABAP](#clean-abap) > [Content](#content) > [Language](#language) > [This section](#reference-table-language)
 
-| Topic                                                   | Reference     |
-|---------------------------------------------------------|---------------|
-| - Mind the legacy                                       | 	|
-| - Mind the performance						          |   |
-| - Prefer object orientation to procedural programming   |   |
-| - Prefer functional to procedural language constructs   |  |
-| - Avoid obsolete language elements                      |  |
-| - Use design patterns wisely                            |  |
+| Topic                                                   | Reference     | Opinion |
+|---------------------------------------------------------|---------------|---------|
+| - Mind the legacy                                       |  |  |
+| - Mind the performance						          |  |  |
+| - Prefer object orientation to procedural programming   |  |  |
+| - Prefer functional to procedural language constructs   |  |  |
+| - Avoid obsolete language elements                      |  |  |
+| - Use design patterns wisely                            |  |  |
 
 ## Constants
 
@@ -916,11 +916,11 @@ ENDDO.
 ### Reference table constants
 > [Clean ABAP](#clean-abap) > [Content](#content) > [Language](#language) > [This section](#reference-table-constants)
 
-| Topic                                                        | Reference     |
-|--------------------------------------------------------------|---------------|
-| - Use constants instead of magic numbers                     | [^CC] chapter 17 - page 300 |
-| - Prefer enumeration classes to constants interfaces         |   |
-| - If you don't use enumeration classes, group your constants |   |
+| Topic                                                        | Reference     | Opinion |
+|--------------------------------------------------------------|---------------|---------|
+| - Use constants instead of magic numbers                     |[^CC] chapter 17 - page 300 | |
+| - Prefer enumeration classes to constants interfaces         |   | |
+| - If you don't use enumeration classes, group your constants |[^IP] chapter 6 - page 58 | |
 
 ## Variables
 
@@ -1067,12 +1067,12 @@ Similarly, speed is not an issue. As a consequence, there is no performance-rela
 ### Reference table variables
 > [Clean ABAP](#clean-abap) > [Content](#content) > [Language](#language) > [This section](#reference-table-variables)
 
-| Topic                                                   | Reference     |
-|---------------------------------------------------------|---------------|
-| - Prefer inline to up-front declarations                | 	|
-| - Don't declare inline in optional branches	          |   |
-| - Do not chain up-front declarations                    |   |
-| - Prefer REF TO to FIELD-SYMBOL					      |  |
+| Topic                                                   | Reference     | Opinion |
+|---------------------------------------------------------|---------------|---------|
+| - Prefer inline to up-front declarations                |   | |
+| - Don't declare inline in optional branches	          |   | |
+| - Do not chain up-front declarations                    |   | |
+| - Prefer REF TO to FIELD-SYMBOL					      |   | |
 
 ## Tables
 
@@ -1253,14 +1253,14 @@ DATA(row) = my_table[ key = input ].
 ### Reference table tables
 > [Clean ABAP](#clean-abap) > [Content](#content) > [Language](#language) > [This section](#reference-table-tables)
 
-| Topic                                                   | Reference     |
-|---------------------------------------------------------|---------------|
-| - Use the right table type                              | 	|
-| - Avoid DEFAULT KEY            				          |   |
-| - Prefer INSERT INTO TABLE to APPEND TO                 |   |
-| - Prefer READ TABLE to LOOP AT                          |  |
-| - Prefer LOOP AT WHERE to nested IF                     |  |
-| - Avoid unnecessary table reads                         |  |
+| Topic                                                   | Reference     | Opinion |
+|---------------------------------------------------------|---------------|---------|
+| - Use the right table type                              |   | |
+| - Avoid DEFAULT KEY            				          |   | |
+| - Prefer INSERT INTO TABLE to APPEND TO                 |   | |
+| - Prefer READ TABLE to LOOP AT                          |   | |
+| - Prefer LOOP AT WHERE to nested IF                     |   | |
+| - Avoid unnecessary table reads                         |   | |
 
 ## Strings
 
@@ -1310,10 +1310,10 @@ DATA(message) = `Received an unexpected HTTP ` && status_code && ` with message 
 ### Reference table strings
 > [Clean ABAP](#clean-abap) > [Content](#content) > [Language](#language) > [This section](#reference-table-strings)
 
-| Topic                                                   | Reference     |
-|---------------------------------------------------------|---------------|
-| - Use \` to define literals                             | 	|
-| - Use | to assemble text   					          |   |
+| Topic                                                   | Reference     | Opinion |
+|---------------------------------------------------------|---------------|---------|
+| - Use \` to define literals                             |   | |
+| - Use | to assemble text   					          |   | |
 
 ## Booleans
 
@@ -1444,12 +1444,12 @@ DATA(has_entries) = COND abap_bool( WHEN line IS NOT INITIAL THEN abap_true ).
 ### Reference table booleans
 > [Clean ABAP](#clean-abap) > [Content](#content) > [Language](#language) > [This section](#reference-table-booleans)
 
-| Topic                                                   | Reference     |
-|---------------------------------------------------------|---------------|
-| - Use Booleans wisely                                   | [^CC] chapter 3 page 40|
-| - Use ABAP_BOOL for Booleans					          |   |
-| - Use ABAP_TRUE and ABAP_FALSE for comparisons          |   |
-| - Use XSDBOOL to set Boolean variables                  |  |
+| Topic                                                   | Reference     | Opinion |
+|---------------------------------------------------------|---------------|---------|
+| - Use Booleans wisely                                   |[^CC] chapter 3 page 40, [^IP] chapter 6 page 53 | |
+| - Use ABAP_BOOL for Booleans					          || |
+| - Use ABAP_TRUE and ABAP_FALSE for comparisons          || |
+| - Use XSDBOOL to set Boolean variables                  || |
 
 ## Conditions
 
@@ -1561,12 +1561,12 @@ ENDMETHOD.
 ### Reference table conditions
 > [Clean ABAP](#clean-abap) > [Content](#content) > [Language](#language) > [This section](#reference-table-conditions)
 
-| Topic                                                   | Reference     |
-|---------------------------------------------------------|---------------|
-| - Try to make conditions positive                       | [^CC] chapter 17 page 302	|
-| - Prefer IS NOT to NOT IS     				          |   |
-| - Consider decomposing complex conditions               | [^CC] chapter 17 page 299  |
-| - Consider extracting complex conditions                |  |
+| Topic                                                   | Reference     | Opinion |
+|---------------------------------------------------------|---------------|---------|
+| - Try to make conditions positive                       |[^CC] chapter 17 page 302 | |
+| - Prefer IS NOT to NOT IS     				          |   | |
+| - Consider decomposing complex conditions               |[^CC] chapter 17 page 299 | |
+| - Consider extracting complex conditions                |[^IP] chapter 5 page 36 | |
 
 ## Ifs
 
@@ -1663,11 +1663,11 @@ IF <this>.
 ### Reference table ifs
 > [Clean ABAP](#clean-abap) > [Content](#content) > [Language](#language) > [This section](#reference-table-ifs)
 
-| Topic                                                         | Reference     |
-|---------------------------------------------------------------|---------------|
-| - No empty IF branches                                        | 	|
-| - Prefer CASE to ELSE IF for multiple alternative conditions  |   |
-| - Keep the nesting depth low                                  |   |
+| Topic                                                         | Reference     | Opinion |
+|---------------------------------------------------------------|---------------|---------|
+| - No empty IF branches                                        | 	| |
+| - Prefer CASE to ELSE IF for multiple alternative conditions  |   | |
+| - Keep the nesting depth low                                  |[^IP] chapter 5 page 36 | |
 
 ## Regular expressions
 
@@ -1732,11 +1732,11 @@ when you demonstrate to the reader how they are built up from more elementary pi
 ### Reference_table regular expressions
 > [Clean ABAP](#clean-abap) > [Content](#content) > [Language](#language) > [This section](#reference-table-regular-expressions)
 
-| Topic                                                   | Reference     |
-|---------------------------------------------------------|---------------|
-| - Prefer simpler methods to regular expressions         | 	|
-| - Prefer basis checks to regular expressions	          |   |
-| - Consider assembling complex regular expressions       |   |
+| Topic                                                   | Reference     | Opinion |
+|---------------------------------------------------------|---------------|---------|
+| - Prefer simpler methods to regular expressions         || |
+| - Prefer basis checks to regular expressions	          || |
+| - Consider assembling complex regular expressions       || |
 
 ## Classes
 
@@ -2141,21 +2141,21 @@ for example with a factory.
 ### Reference table classes
 > [Clean ABAP](#clean-abap) > [Content](#content) > [Language](#language) > [This section](#reference-table-classes)
 
-| Topic                                                   | Reference     |
-|---------------------------------------------------------|---------------|
-| - Prefer objects to static classes                      |[^CC] chapter17 page 296   |
-| - Prefer composition to inheritance       	          |   |
-| - Don't mix stateful and stateless in the same class    |   |
-| - Global by default, local only where appropriate       |   |
-| - FINAL if not designed for inheritance                 |   |
-| - Members PRIVATE by default, PROTECTED only if needed  |   |
-| - Consider using immutable instead of getter            |   |
-| - Use READ-ONLY sparingly                               |   |
-| - Prefer NEW to CREATE OBJECT                           |   |
-| - If your global class is CREATE PRIVATE, leave the CONSTRUCTOR public  |  |
-| - Prefer multiple static creation methods to optional parameters        |  |
-| - Use descriptive names for multiple creation methods            |  |
-| - Make singletons only where multiple instances don't make sense |  |
+| Topic                                                   | Reference     | Opinion |
+|---------------------------------------------------------|---------------|---------|
+| - Prefer objects to static classes                      |[^CC] chapter17 page 296| |
+| - Prefer composition to inheritance       	          |[^IP] chapter 5 page 24| |
+| - Don't mix stateful and stateless in the same class    || |
+| - Global by default, local only where appropriate       |[^IP] chapter 5 page 35| |
+| - FINAL if not designed for inheritance                 || |
+| - Members PRIVATE by default, PROTECTED only if needed  || |
+| - Consider using immutable instead of getter            |[^IP] chapter 8 page 95| |
+| - Use READ-ONLY sparingly                               || |
+| - Prefer NEW to CREATE OBJECT                           || |
+| - If your global class is CREATE PRIVATE, leave the CONSTRUCTOR public || |
+| - Prefer multiple static creation methods to optional parameters || |
+| - Use descriptive names for multiple creation methods            || |
+| - Make singletons only where multiple instances don't make sense || |
 
 ## Methods
 
@@ -3127,33 +3127,33 @@ Prefer using an `IF` statement in combination with `CONTINUE` instead, since `CO
 ### Reference table methods
 > [Clean ABAP](#clean-abap) > [Content](#content) > [Language](#language) > [This section](#reference-table-methods)
 
-| Topic                                                          | Reference     |
-|----------------------------------------------------------------|---------------|
-| - Don't call static methods through instance variables         | 	|
-| - Prefer functional to procedural calls                        |  |
-| - Omit RECEIVING                                               |  |
-| - Omit the optional keyword EXPORTING                          |  |
-| - Omit the parameter name in single parameter calls            |  |
-| - Omit the self-reference me when calling an instance method   |  |
-| - Prefer instance to static methods                            |  |
-| - Public instance methods should be part of an interface       |  |
-| - Aim for few IMPORTING parameters, at best less than three    |  |
-| - Split methods instead of adding OPTIONAL parameters          |  |
-| - Use PREFERRED PARAMETER sparingly                            |  |
-| - Prefer RETURNING to EXPORTING                                |  |
-| - RETURNING large tables is usually okay                       |  |
-| - Use either RETURNING or EXPORTING or CHANGING, but not a combination |  |
-| - Use CHANGING sparingly, where suited                         |  |
-| - Split method instead of Boolean input parameter              |  |
-| - Consider calling the RETURNING parameter RESULT              |  |
-| - Clear or overwrite EXPORTING reference parameters            |  |
-| - Do one thing, do it well, do it only                         |  |
-| - Focus on the happy path or error handling, but not both      |  |
-| - Descend one level of abstraction                             |  |
-| - Keep methods small                                           |  |
-| - Fail fast                                                    |  |
-| - CHECK vs. RETURN                                             |  |
-| - void CHECK in other positions                                |  |
+| Topic                                                          | Reference     | Opinion |
+|----------------------------------------------------------------|---------------|---------|
+| - Don't call static methods through instance variables         | 	| |
+| - Prefer functional to procedural calls                        |  | |
+| - Omit RECEIVING                                               |  | |
+| - Omit the optional keyword EXPORTING                          |  | |
+| - Omit the parameter name in single parameter calls            |  | |
+| - Omit the self-reference me when calling an instance method   |  | |
+| - Prefer instance to static methods                            |  | |
+| - Public instance methods should be part of an interface       |  | |
+| - Aim for few IMPORTING parameters, at best less than three    |  | |
+| - Split methods instead of adding OPTIONAL parameters          |  | |
+| - Use PREFERRED PARAMETER sparingly                            |  | |
+| - Prefer RETURNING to EXPORTING                                |  | |
+| - RETURNING large tables is usually okay                       |  | |
+| - Use either RETURNING or EXPORTING or CHANGING, but not a combination |  | |
+| - Use CHANGING sparingly, where suited                         |  | |
+| - Split method instead of Boolean input parameter              |  | |
+| - Consider calling the RETURNING parameter RESULT              |  | |
+| - Clear or overwrite EXPORTING reference parameters            |  | |
+| - Do one thing, do it well, do it only                         |  | |
+| - Focus on the happy path or error handling, but not both      |  | |
+| - Descend one level of abstraction                             |  | |
+| - Keep methods small                                           |  | |
+| - Fail fast                                                    |  | |
+| - CHECK vs. RETURN                                             |  | |
+| - void CHECK in other positions                                |  | |
 
 ## Error Handling
 
@@ -3571,22 +3571,22 @@ ENDMETHOD.
 ### Reference table error handling
 > [Clean ABAP](#clean-abap) > [Content](#content) > [Language](#language) > [This section](#reference-table-error-handling)
 
-| Topic                                                                | Reference     |
-|----------------------------------------------------------------------|---------------|
-| - Make messages easy to find                                         | [^CC] chapter 7 page 107 |
-| - Prefer exceptions to return codes			                       | [^CC] chapter 3 page 46, chapter 7 page 104 |
-| - Don't let failures slip through                                    |   |
-| - Exceptions are for errors, not for regular cases                   | [^CC] chapter 7 page 109  |
-| - Use class-based exceptions                                         | [^CC] chapter 7 page 107 |
-| - Use own super classes                                              |   |
-| - Throw one type of exception                                        |   |
-| - Use sub-classes to enable callers to distinguish error situations  |   |
-| - Throw CX_STATIC_CHECK for manageable exceptions                    |   |
-| - Throw CX_NO_CHECK for usually unrecoverable situations             | [^CC] chapter 7 page 106  |
-| - Consider CX_DYNAMIC_CHECK for avoidable exceptions                 |   |
-| - Dump for totally unrecoverable situations                          |   |
-| - Prefer RAISE EXCEPTION NEW to RAISE EXCEPTION TYPE                 |   |
-| - Wrap foreign exceptions instead of letting them invade your code   |   |
+| Topic                                                                | Reference     | Opinion |
+|----------------------------------------------------------------------|---------------|---------|
+| - Make messages easy to find                                         | [^CC] chapter 7 page 107 | |
+| - Prefer exceptions to return codes			                       | [^CC] chapter 3 page 46, chapter 7 page 104 | | 
+| - Don't let failures slip through                                    |   | |
+| - Exceptions are for errors, not for regular cases                   | [^CC] chapter 7 page 109 | |
+| - Use class-based exceptions                                         | [^CC] chapter 7 page 107 | |
+| - Use own super classes                                              |   | |
+| - Throw one type of exception                                        |   | |
+| - Use sub-classes to enable callers to distinguish error situations  |   | |
+| - Throw CX_STATIC_CHECK for manageable exceptions                    |   | |
+| - Throw CX_NO_CHECK for usually unrecoverable situations             | [^CC] chapter 7 page 106 | |
+| - Consider CX_DYNAMIC_CHECK for avoidable exceptions                 |   | |
+| - Dump for totally unrecoverable situations                          |   | |
+| - Prefer RAISE EXCEPTION NEW to RAISE EXCEPTION TYPE                 |   | |
+| - Wrap foreign exceptions instead of letting them invade your code   |   | |
 
 ## Comments
 
@@ -3913,21 +3913,21 @@ have replaced them.
 ### Reference table comments
 > [Clean ABAP](#clean-abap) > [Content](#content) > [Language](#language) > [This section](#reference-table-comments)
 
-| Topic                                                   | Reference     |
-|---------------------------------------------------------|---------------|
-| - Express yourself in code, not in comments             | [^CC] chapter 4 page 55  |
-| - Comments are no excuse for bad names		          |   |
-| - Use methods instead of comments to segment your code  | [^CC] chapter 4 page 67  |
-| - Write comments to explain the why, not the what       | [^CC] chapter 4 page 55ff. |
-| - Design goes into the design documents, not the code   | [^CC] chapter 4 page 63  |
-| - Comment with ", not with *                            |   |
-| - Put comments before the statement they relate to      |   |
-| - Delete code instead of commenting it                  | [^CC] chapter 4 page 68  |
-| - Use FIXME, TODO, and XXX and add your ID              | [^CC] chapter 4 page 58 |
-| - Don't add method signature and end-of comments        | [^CC] chapter 4 page 67  |
-| - Don't duplicate message texts as comments             | [^CC] chapter 4 page 60  |
-| - ABAP Doc only for public APIs                         | [^CC] chapter 4 page 59  |
-| - Prefer pragmas to pseudo comments                     |   |
+| Topic                                                   | Reference     | Opinion |
+|---------------------------------------------------------|---------------|---------|
+| - Express yourself in code, not in comments             | [^CC] chapter 4 page 55 | |
+| - Comments are no excuse for bad names		          |   | |
+| - Use methods instead of comments to segment your code  | [^CC] chapter 4 page 67 | |
+| - Write comments to explain the why, not the what       | [^CC] chapter 4 page 55ff. | |
+| - Design goes into the design documents, not the code   | [^CC] chapter 4 page 63 | |
+| - Comment with ", not with *                            |   | |
+| - Put comments before the statement they relate to      |   | |
+| - Delete code instead of commenting it                  | [^CC] chapter 4 page 68 | |
+| - Use FIXME, TODO, and XXX and add your ID              | [^CC] chapter 4 page 58 | |
+| - Don't add method signature and end-of comments        | [^CC] chapter 4 page 67 | |
+| - Don't duplicate message texts as comments             | [^CC] chapter 4 page 60 | |
+| - ABAP Doc only for public APIs                         | [^CC] chapter 4 page 59 | |
+| - Prefer pragmas to pseudo comments                     |   | |
 
 ## Formatting
 
@@ -4360,28 +4360,28 @@ var1 = var2 = var3.
 ### Reference table formatting
 > [Clean ABAP](#clean-abap) > [Content](#content) > [Language](#language) > [This section](#reference-table-formatting)
 
-| Topic                                                              | Reference     |
-|--------------------------------------------------------------------|---------------|
-| - Be consistent                                                    | [^CC] chapter 5 page 75 |
-| - Optimize for reading, not for writing	                         | [^CC] chapter 5 page 77 |
-| - Use the Pretty Printer before activating                         |   |
-| - Use your Pretty Printer team settings                            |   |
-| - No more than one statement per line                              |   |
-| - Stick to a reasonable line length                                | [^CC] chapter 5 page 77 |
-| - Condense your code                                               |   |
-| - Add a single blank line to separate things, but not more         | [^CC] chapter 5 page 78  |
-| - Align assignments to the same object, but not to different ones  |   |
-| - Close brackets at line end                                       |   |
-| - Keep single parameter calls on one line                          |   |
-| - Keep parameters behind the call                                  |   |
-| - If you break, indent parameters under the call                   |   |
-| - Line-break multiple parameters			                         |   |
-| - Align parameters                                                 |   |
-| - Break the call to a new line if the line gets too long           | [^CC] chapter 5 page 89 |
-| - Indent and snap to tab                                           | [^CC] chapter 5 page 88 |
-| - Indent in-line declarations like method calls                    |   |
-| - Don't align type clauses                                         | [^CC] chapter 5 page 87 |
-| - Don't chain assignments                                          |   |
+| Topic                                                              | Reference     | Opinion |
+|--------------------------------------------------------------------|---------------|---------|
+| - Be consistent                                                    | [^CC] chapter 5 page 75 | |
+| - Optimize for reading, not for writing	                         | [^CC] chapter 5 page 77 | |
+| - Use the Pretty Printer before activating                         |   | |
+| - Use your Pretty Printer team settings                            |   | |
+| - No more than one statement per line                              |   | |
+| - Stick to a reasonable line length                                | [^CC] chapter 5 page 77 | |
+| - Condense your code                                               |   | |
+| - Add a single blank line to separate things, but not more         | [^CC] chapter 5 page 78 | |
+| - Align assignments to the same object, but not to different ones  |   | |
+| - Close brackets at line end                                       |   | |
+| - Keep single parameter calls on one line                          |   | |
+| - Keep parameters behind the call                                  |   | |
+| - If you break, indent parameters under the call                   |   | |
+| - Line-break multiple parameters			                         |   | |
+| - Align parameters                                                 |   | |
+| - Break the call to a new line if the line gets too long           | [^CC] chapter 5 page 89 | |
+| - Indent and snap to tab                                           | [^CC] chapter 5 page 88 | |
+| - Indent in-line declarations like method calls                    |   | |
+| - Don't align type clauses                                         | [^CC] chapter 5 page 87 | |
+| - Don't chain assignments                                          |   | |
 
 ## Testing
 
@@ -5225,44 +5225,44 @@ Instead of copy-pasting this over and over again.
 ### Reference table testing
 > [Clean ABAP](#clean-abap) > [Content](#content) > [Language](#language) > [This section](#reference-table-testing)
 
-| Topic                                                                 | Reference     |
-|-----------------------------------------------------------------------|---------------|
-| - Write testable code                                                 |   |
-| - Enable others to mock you                                           |   |
-| - Readability rules                                                   | [^CC] chapter 9 page 124 |
-| - Don't make copies or write test reports                             |   |
-| - Test public, not private internals                                  |   |
-| - Don't obsess about coverage                                         |   |
-| - Call local test classes by their purpose                            | [^CC] chapter 17 page 313 |
-| - Put tests in local classes                                          |   |
-| - Put help methods in help classes                                    |   |
-| - How to execute test classes                                         |   |
-| - Name the code under test meaningfully, or default to CUT            |   |
-| - Test against interfaces, not implementations                        |   |
-| - Extract the call to the code under test to its own method           |   |
-| - Use dependency inversion to inject test doubles                     |   |
-| - Consider to use the tool ABAP test double                           |   |
-| - Exploit the test tools                                              |   |
-| - Use test seams as temporary workaround                              |   |
-| - Use LOCAL FRIENDS to access the dependency-inverting constructor    |   |
-| - Don't misuse LOCAL FRIENDS to invade the tested code                |   |
-| - Don't change the productive code to make the code testable          |   |
-| - Don't sub-class to mock methods                                     |   |
-| - Don't mock stuff that's not needed                                  |   |
-| - Don't build test frameworks                                         |   |
-| - Test method names: reflect what's given and expected                |   |
-| - "When" is exactly one call                                          |   |
-| - Don't add a TEARDOWN unless you really need it                      |   |
-| - Make it easy to spot meaning                                        |   |
-| - Make it easy to spot differences                                    |   |
-| - Use constants to describe purpose and importance of test data       |   |
-| - Few, focused assertions                                             | [^CC] chapter 9 page 130 |
-| - Use the right assert type                                           |   |
-| - Assert content, not quantity                                        |   |
-| - Assert quality, not content                                         |   |
-| - Use FAIL to check for expected exceptions                           |   |
-| - Forward unexpected exceptions instead of catching and failing       |   |
-| - Write custom asserts to shorten code and avoid duplication          |   |
+| Topic                                                                 | Reference     | Opinion |
+|-----------------------------------------------------------------------|---------------|---------|
+| - Write testable code                                                 |   | |
+| - Enable others to mock you                                           |   | |
+| - Readability rules                                                   | [^CC] chapter 9 page 124 | |
+| - Don't make copies or write test reports                             |   | |
+| - Test public, not private internals                                  |   | |
+| - Don't obsess about coverage                                         |   | |
+| - Call local test classes by their purpose                            | [^CC] chapter 17 page 313 | |
+| - Put tests in local classes                                          |   | |
+| - Put help methods in help classes                                    |   | |
+| - How to execute test classes                                         |   | |
+| - Name the code under test meaningfully, or default to CUT            |   | |
+| - Test against interfaces, not implementations                        |   | |
+| - Extract the call to the code under test to its own method           |   | |
+| - Use dependency inversion to inject test doubles                     |   | |
+| - Consider to use the tool ABAP test double                           |   | |
+| - Exploit the test tools                                              |   | |
+| - Use test seams as temporary workaround                              |   | |
+| - Use LOCAL FRIENDS to access the dependency-inverting constructor    |   | |
+| - Don't misuse LOCAL FRIENDS to invade the tested code                |   | |
+| - Don't change the productive code to make the code testable          |   | |
+| - Don't sub-class to mock methods                                     |   | |
+| - Don't mock stuff that's not needed                                  |   | |
+| - Don't build test frameworks                                         |   | |
+| - Test method names: reflect what's given and expected                |   | |
+| - "When" is exactly one call                                          |   | |
+| - Don't add a TEARDOWN unless you really need it                      |   | |
+| - Make it easy to spot meaning                                        |   | |
+| - Make it easy to spot differences                                    |   | |
+| - Use constants to describe purpose and importance of test data       |   | |
+| - Few, focused assertions                                             | [^CC] chapter 9 page 130 | |
+| - Use the right assert type                                           |   | |
+| - Assert content, not quantity                                        |   | |
+| - Assert quality, not content                                         |   | |
+| - Use FAIL to check for expected exceptions                           |   | |
+| - Forward unexpected exceptions instead of catching and failing       |   | |
+| - Write custom asserts to shorten code and avoid duplication          |   | |
 
 
 # Footnotes

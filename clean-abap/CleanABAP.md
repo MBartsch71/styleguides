@@ -41,6 +41,7 @@ The [Cheat Sheet](cheat-sheet/CheatSheet.md) is a print-optimized version.
   - [Use pattern names only if you mean them](#use-pattern-names-only-if-you-mean-them)
   - [Avoid encodings, esp. Hungarian notation and prefixes](#avoid-encodings-esp-hungarian-notation-and-prefixes)
   - [Reference table](#reference-table-names)
+  - [Code smells](#code-smells-names)
 - [Language](#language)
   - [Mind the legacy](#mind-the-legacy)
   - [Mind the performance](#mind-the-performance)
@@ -54,12 +55,14 @@ The [Cheat Sheet](cheat-sheet/CheatSheet.md) is a print-optimized version.
   - [Prefer enumeration classes to constants interfaces](#prefer-enumeration-classes-to-constants-interfaces)
   - [If you don't use enumeration classes, group your constants](#if-you-dont-use-enumeration-classes-group-your-constants)
   - [Reference table](#reference-table-constants)
+  - [Code smells](#code-smells-constants)
 - [Variables](#variables)
   - [Prefer inline to up-front declarations](#prefer-inline-to-up-front-declarations)
   - [Don't declare inline in optional branches](#dont-declare-inline-in-optional-branches)
   - [Do not chain up-front declarations](#do-not-chain-up-front-declarations)
   - [Prefer REF TO to FIELD-SYMBOL](#prefer-ref-to-to-field-symbol)
   - [Reference table](#reference-table-variables)
+  - [Code smells](#code-smells-variables)
 - [Tables](#tables)
   - [Use the right table type](#use-the-right-table-type)
   - [Avoid DEFAULT KEY](#avoid-default-key)
@@ -85,11 +88,13 @@ The [Cheat Sheet](cheat-sheet/CheatSheet.md) is a print-optimized version.
   - [Consider decomposing complex conditions](#consider-decomposing-complex-conditions)
   - [Consider extracting complex conditions](#consider-extracting-complex-conditions)
   - [Reference table](#reference-table-conditions)
+  - [Code smells](#code-smells-conditions)
 - [Ifs](#ifs)
   - [No empty IF branches](#no-empty-if-branches)
   - [Prefer CASE to ELSE IF for multiple alternative conditions](#prefer-case-to-else-if-for-multiple-alternative-conditions)
   - [Keep the nesting depth low](#keep-the-nesting-depth-low)
   - [Reference table](#reference-table-ifs)
+  - [Code smells](#code-smells-ifs)
 - [Regular expressions](#regular-expressions)
   - [Prefer simpler methods to regular expressions](#prefer-simpler-methods-to-regular-expressions)
   - [Prefer basis checks to regular expressions](#prefer-basis-checks-to-regular-expressions)
@@ -113,6 +118,7 @@ The [Cheat Sheet](cheat-sheet/CheatSheet.md) is a print-optimized version.
     - [Use descriptive names for multiple creation methods](#use-descriptive-names-for-multiple-creation-methods)
     - [Make singletons only where multiple instances don't make sense](#make-singletons-only-where-multiple-instances-dont-make-sense)
     - [Reference table](#reference-table-classes)
+    - [Code smells](#code-smells-classes)
 - [Methods](#methods)
   - [Calls](#calls)
     - [Don't call static methods through instance variables](#dont-call-static-methods-through-instance-variables)
@@ -150,7 +156,8 @@ The [Cheat Sheet](cheat-sheet/CheatSheet.md) is a print-optimized version.
     - [Fail fast](#fail-fast)
     - [CHECK vs. RETURN](#check-vs-return)
     - [Avoid CHECK in other positions](#avoid-check-in-other-positions)
-    - [Reference table](#reference-table-methods)
+ - [Reference table](#reference-table-methods)
+ - [Code smells](#code-smells-methods)
 - [Error Handling](#error-handling)
   - [Messages](#messages)
     - [Make messages easy to find](#make-messages-easy-to-find)
@@ -173,6 +180,7 @@ The [Cheat Sheet](cheat-sheet/CheatSheet.md) is a print-optimized version.
   - [Catching](#catching)
     - [Wrap foreign exceptions instead of letting them invade your code](#wrap-foreign-exceptions-instead-of-letting-them-invade-your-code)
     - [Reference table](#reference-table-exceptions)
+    - [Code smells](#code-smells-error-handling)
 - [Comments](#comments)
   - [Express yourself in code, not in comments](#express-yourself-in-code-not-in-comments)
   - [Comments are no excuse for bad names](#comments-are-no-excuse-for-bad-names)
@@ -257,6 +265,7 @@ The [Cheat Sheet](cheat-sheet/CheatSheet.md) is a print-optimized version.
     - [Forward unexpected exceptions instead of catching and failing](#forward-unexpected-exceptions-instead-of-catching-and-failing)
     - [Write custom asserts to shorten code and avoid duplication](#write-custom-asserts-to-shorten-code-and-avoid-duplication)
     - [Reference table](#reference-table-testing)
+    - [Code smells](#code-smells-testing)
 
 ## How to
 
@@ -616,7 +625,7 @@ ENDMETHOD.
 
 | Topic                                                   | Reference     | Opinion |
 |---------------------------------------------------------|---------------|---------|
-| - Use descriptive names                                 |[^CC] page 39, [^IP] chapter 5 / 6 |Agree and I try|
+| - Use descriptive names                                 |[^CC] page 39, [^IP] chapter 5 / 6,[^RF] chapter 3 page 72  |Agree and I try|
 | - Prefer solution domain and problem domain terms       |[^CC] page 27 |I do so|
 | - Use plural                                            |[^IP] chapter 6, page 51 | |
 | - Use pronounceable names                               |[^CC] page 21 |Sometimes hard but it's possible|
@@ -627,6 +636,17 @@ ENDMETHOD.
 | - Pick one word per concept                             |[^CC] page 26 | |
 | - Use pattern names only if you mean them               |[^CC] page 27 | |
 | - Avoid encodings, esp. Hungarian notation and prefixes |[^CC] page 23, [^IP] chapter 6 page 50 |Depends on programming convention, at work I have to use, private I do not use |
+
+### Code smells names
+> [Clean ABAP](#clean-abap) > [Content](#content) > [Names](#names) > [This section](#code-smells-names)
+
+| Smell                                                   | Reference     |
+|---------------------------------------------------------|---------------|
+| - Mysterious name |[^RF] chapter 3 page 72 |
+| - Choose descriptive names |[^CC] chapter 17 page 309 |
+| - Use standard nomenclature when possible |[^CC] chapter 17 page 311 |
+| - Avoid encodings |[^CC] chapter 17 page 312 |
+
 
 ## Language
 
@@ -922,6 +942,14 @@ ENDDO.
 | - Prefer enumeration classes to constants interfaces         |   |I will when I work on a system which supports this |
 | - If you don't use enumeration classes, group your constants |[^IP] chapter 6 - page 58 |usually we use Abstract classes and group the constants in meaningful parts|
 
+### Code smells constants
+> [Clean ABAP](#clean-abap) > [Content](#content) > [Names](#names) > [This section](#code-smells-constants)
+
+| Smell                                                   | Reference     |
+|---------------------------------------------------------|---------------|
+| - Replace magic numbers with named constants |[^CC] chapter 17 page 301 |
+| - Constants versus Enums |[^CC] chapter 17 page 308 |
+
 ## Variables
 
 > [Clean ABAP](#clean-abap) > [Content](#content) > [This section](#variables)
@@ -1069,10 +1097,17 @@ Similarly, speed is not an issue. As a consequence, there is no performance-rela
 
 | Topic                                                   | Reference     | Opinion |
 |---------------------------------------------------------|---------------|---------|
-| - Prefer inline to up-front declarations                |   |yes, sometimes you have to declare explicitly when you want to have a certain type |
+| - Prefer inline to up-front declarations                | [^IP] chapter 6 page 61 ff.  |yes, sometimes you have to declare explicitly when you want to have a certain type |
 | - Don't declare inline in optional branches	          |   |Anyway optional branches I try to avoid|
 | - Do not chain up-front declarations                    |   |That's a pain in the a**, I never liked this|
 | - Prefer REF TO to FIELD-SYMBOL					      |   |I tried in the last days and I like it|
+
+### Code smells variables
+> [Clean ABAP](#clean-abap) > [Content](#content) > [Names](#names) > [This section](#code-smells-variables)
+
+| Smell                                                   | Reference     |
+|---------------------------------------------------------|---------------|
+| | |
 
 ## Tables
 
@@ -1261,6 +1296,13 @@ DATA(row) = my_table[ key = input ].
 | - Prefer READ TABLE to LOOP AT                          |   |Usually I use the functional expressions, where I can|
 | - Prefer LOOP AT WHERE to nested IF                     |   |Agree|
 | - Avoid unnecessary table reads                         |   |Agree|
+
+### Code smells tables
+> [Clean ABAP](#clean-abap) > [Content](#content) > [Names](#names) > [This section](#code-smells-tables)
+
+| Smell                                                   | Reference     |
+|---------------------------------------------------------|---------------|
+|  | | 
 
 ## Strings
 
@@ -1568,6 +1610,14 @@ ENDMETHOD.
 | - Consider decomposing complex conditions               |[^CC] chapter 17 page 299 |Also this is a challenging thing which I will work on in the future|
 | - Consider extracting complex conditions                |[^IP] chapter 5 page 36 |I try to make conditions as simple as possible, this is also important as it reduces the Unit test you have to write|
 
+### Code smells conditions
+> [Clean ABAP](#clean-abap) > [Content](#content) > [Names](#names) > [This section](#code-smells-conditions)
+
+| Smell                                                   | Reference     |
+|---------------------------------------------------------|---------------|
+| - Encapsulate conditionals |[^CC] chapter 17 page 301 |
+| - Avoid negative conditions|[^CC] chapter 17 page 302 | 
+
 ## Ifs
 
 > [Clean ABAP](#clean-abap) > [Content](#content) > [This section](#ifs)
@@ -1668,6 +1718,13 @@ IF <this>.
 | - No empty IF branches                                        | 	|Yes this is a waste|
 | - Prefer CASE to ELSE IF for multiple alternative conditions  |   |IF I use multiple alternative conditions I do it with CASE or recently with COND and SWITCH|
 | - Keep the nesting depth low                                  |[^IP] chapter 5 page 36 |Agree completely|
+
+### Code smells ifs
+> [Clean ABAP](#clean-abap) > [Content](#content) > [Names](#names) > [This section](#code-smells-ifs)
+
+| Smell                                                   | Reference     |
+|---------------------------------------------------------|---------------|
+| - Prefer polymorphism to If/Else or Switch/ Case |[^CC] chapter 17 page 299 |
 
 ## Regular expressions
 
@@ -2146,16 +2203,24 @@ for example with a factory.
 | - Prefer objects to static classes                      |[^CC] chapter17 page 296|I try to avoid static classes|
 | - Prefer composition to inheritance       	          |[^IP] chapter 5 page 24|Usually I use composition although inheritance is sometimes appropriate |
 | - Don't mix stateful and stateless in the same class    ||This I try to avoid|
-| - Global by default, local only where appropriate       |[^IP] chapter 5 page 35|This depends on the use case, but for productive code we use global classes|
-| - FINAL if not designed for inheritance                 ||I use FINAL seldom, just if I really want to exclude inheritance|
-| - Members PRIVATE by default, PROTECTED only if needed  ||Fully agree|
+| - Global by default, local only where appropriate       |[^IP] chapter 5 page 35, [^RF] chapter 3 page 74|This depends on the use case, but for productive code we use global classes|
+| - FINAL if not designed for inheritance                 |[^IP ] chapter 8 page 81|I use FINAL seldom, just if I really want to exclude inheritance|
+| - Members PRIVATE by default, PROTECTED only if needed  |[^IP] chapter 8 page 81|Fully agree|
 | - Consider using immutable instead of getter            |[^IP] chapter 8 page 95|This is a sensible topic, usually i use getters, so I can have the member variables private, If I see a global variable and then its READ ONLY, I don't see the sense|
 | - Use READ-ONLY sparingly                               ||This conflicts with the point above|
 | - Prefer NEW to CREATE OBJECT                           ||I never use CREATE OBJECT anymore|
 | - If your global class is CREATE PRIVATE, leave the CONSTRUCTOR public ||Or use other instantiation techniques|
-| - Prefer multiple static creation methods to optional parameters ||Interesting approach, I like it|
+| - Prefer multiple static creation methods to optional parameters |[^IP] chapter 8 page 90|Interesting approach, I like it|
 | - Use descriptive names for multiple creation methods            || |
 | - Make singletons only where multiple instances don't make sense ||Ja, singleton i some rare cases can be appropriate|
+
+### Code smells classes
+> [Clean ABAP](#clean-abap) > [Content](#content) > [Names](#names) > [This section](#code-smells-classes)
+
+| Smell                                                   | Reference     |
+|---------------------------------------------------------|---------------|
+| | |
+| | |
 
 ## Methods
 
@@ -3129,7 +3194,7 @@ Prefer using an `IF` statement in combination with `CONTINUE` instead, since `CO
 
 | Topic                                                          | Reference     | Opinion |
 |----------------------------------------------------------------|---------------|---------|
-| - Don't call static methods through instance variables         | 	|Ja, for this you have static methods, to call it without an instance|
+| - Don't call static methods through instance variables         |[^IP] chapter 8 page 81 	|Ja, for this you have static methods, to call it without an instance|
 | - Prefer functional to procedural calls                        |  |Definitely|
 | - Omit RECEIVING                                               |  |The next 4 points are clear to me|
 | - Omit the optional keyword EXPORTING                          |  | |
@@ -3137,23 +3202,38 @@ Prefer using an `IF` statement in combination with `CONTINUE` instead, since `CO
 | - Omit the self-reference me when calling an instance method   |  | |
 | - Prefer instance to static methods                            |  | |
 | - Public instance methods should be part of an interface       |  |Depends on the use case, but by default I agree|
-| - Aim for few IMPORTING parameters, at best less than three    |  |Usually I use then objects or at least structures|
+| - Aim for few IMPORTING parameters, at best less than three    |[^CC] chapter 3 page 40ff., [^RF] chapter 3 page 74  |Usually I use then objects or at least structures|
 | - Split methods instead of adding OPTIONAL parameters          |  | |
 | - Use PREFERRED PARAMETER sparingly                            |  |Very very rare I use this|
-| - Prefer RETURNING to EXPORTING                                |  | |
+| - Prefer RETURNING to EXPORTING                                |[^CC] chapter 3 page 45  | |
 | - RETURNING large tables is usually okay                       |  |I made the same observation|
 | - Use either RETURNING or EXPORTING or CHANGING, but not a combination |  ||
 | - Use CHANGING sparingly, where suited                         |  | |
-| - Split method instead of Boolean input parameter              |  | |
-| - Consider calling the RETURNING parameter RESULT              |  |This I adopted from the Refactoring book by Martin Fowler, it makes the life simpler ;-)|
+| - Split method instead of Boolean input parameter              |[^CC] chapter 3 page 41, [^IP] chapter 7 page 67 | |
+| - Consider calling the RETURNING parameter RESULT              |[^IP] chapter 6 page 59  |This I adopted from the Refactoring book by Martin Fowler, it makes the life simpler ;-)|
 | - Clear or overwrite EXPORTING reference parameters            |  |I don't use exporting, so no danger|
-| - Do one thing, do it well, do it only                         |  | |
-| - Focus on the happy path or error handling, but not both      |  | |
-| - Descend one level of abstraction                             |  | |
-| - Keep methods small                                           |  | |
-| - Fail fast                                                    |  |Ja, I usually try to use Guard clauses|
+| - Do one thing, do it well, do it only                         |[^CC] chapter 3 page 35  | |
+| - Focus on the happy path or error handling, but not both      |[^CC] chapter 3 page 47, [^IP] chapter 7 page 70  | |
+| - Descend one level of abstraction                             |[^CC] chapter 3 page 36  | |
+| - Keep methods small                                           |[^CC] chapter 3 page 34  | |
+| - Fail fast                                                    |[^IP] chapter 7 page 70   |Ja, I usually try to use Guard clauses|
 | - CHECK vs. RETURN                                             |  |I use check usually in Loops, even if it is sometimes difficult to understand, because the reader must to be familiar with the CHECK command|
 | - avoid CHECK in other positions                               |  | |
+
+### Code smells methods
+> [Clean ABAP](#clean-abap) > [Content](#content) > [Names](#names) > [This section](#code-smells-methods)
+
+| Smell                                                   | Reference     |
+|---------------------------------------------------------|---------------|
+| - Code at wrong level of abstraction |[^CC] chapter 17 page 290 |
+| - Inappropriate static |[^CC] chapter 17 page 296 |
+| - Selector arguments |[^CC] chapter 17 page 294 |
+| - Too much information |[^CC] chapter 17 page 291 |
+| - Feature envy |[^CC] chapter 17 page 293, [^IP] chapter 3 page 77 |
+| - Long parameter lists |[^IP] chapter 3 page 74 |
+| - Long function |[^IP] chapter 3 page 73 |
+| - Too many arguments |[^CC] chapter 17 page 288 |
+| - Output arguments |[^CC] chapter 17 page 288 |
 
 ## Error Handling
 
@@ -3573,20 +3653,27 @@ ENDMETHOD.
 
 | Topic                                                                | Reference     | Opinion |
 |----------------------------------------------------------------------|---------------|---------|
-| - Make messages easy to find                                         | [^CC] chapter 7 page 107 |I prefer the exxx(msgclass) form, there you can see quickly the message F2 in eclipse |
-| - Prefer exceptions to return codes			                       | [^CC] chapter 3 page 46, chapter 7 page 104 | | 
+| - Make messages easy to find                                         |[^CC] chapter 7 page 107 |I prefer the exxx(msgclass) form, there you can see quickly the message F2 in eclipse |
+| - Prefer exceptions to return codes			                       |[^CC] chapter 3 page 46, chapter 7 page 104 | | 
 | - Don't let failures slip through                                    |   | |
-| - Exceptions are for errors, not for regular cases                   | [^CC] chapter 7 page 109 |Even if it's tempting to use exceptions for control flow |
-| - Use class-based exceptions                                         | [^CC] chapter 7 page 107 |Definitely|
-| - Use own super classes                                              |   | |
+| - Exceptions are for errors, not for regular cases                   |[^CC] chapter 7 page 109, [^IP] chapter 7 page 70 |Even if it's tempting to use exceptions for control flow |
+| - Use class-based exceptions                                         |[^CC] chapter 7 page 107 |Definitely|
+| - Use own super classes                                              |[^IP] chapter 7 page 73   | |
 | - Throw one type of exception                                        |   | |
-| - Use sub-classes to enable callers to distinguish error situations  |   | |
-| - Throw CX_STATIC_CHECK for manageable exceptions                    |   |Can put some dependencies to the code, makes also the maintenance more hard, if I have the full control over the code, I prefer NO_CHECK, there I can decide where to catch|
-| - Throw CX_NO_CHECK for usually unrecoverable situations             | [^CC] chapter 7 page 106 | |
+| - Use sub-classes to enable callers to distinguish error situations  |[^IP] chapter 7 page 73   | |
+| - Throw CX_STATIC_CHECK for manageable exceptions                    |[^IP] chapter 7 page 73   |Can put some dependencies to the code, makes also the maintenance more hard, if I have the full control over the code, I prefer NO_CHECK, there I can decide where to catch|
+| - Throw CX_NO_CHECK for usually unrecoverable situations             |[^CC] chapter 7 page 106, [^IP] chapter 7 pahe 72 | |
 | - Consider CX_DYNAMIC_CHECK for avoidable exceptions                 |   | |
 | - Dump for totally unrecoverable situations                          |   | |
 | - Prefer RAISE EXCEPTION NEW to RAISE EXCEPTION TYPE                 |   |This is an interesting idea, I have to analyze this in more deep|
 | - Wrap foreign exceptions instead of letting them invade your code   |   |Ja, usually this I do |
+
+### Code smells error handling
+> [Clean ABAP](#clean-abap) > [Content](#content) > [Names](#names) > [This section](#code-smells-error-handling)
+
+| Smell                                                   | Reference     |
+|---------------------------------------------------------|---------------|
+|   |  |
 
 ## Comments
 
@@ -3915,18 +4002,18 @@ have replaced them.
 
 | Topic                                                   | Reference     | Opinion |
 |---------------------------------------------------------|---------------|---------|
-| - Express yourself in code, not in comments             | [^CC] chapter 4 page 55 |Agree, but if the code become to complex just because of the attempt to avoid comments, then I thing it is OK to write comments|
-| - Comments are no excuse for bad names		          |   |Agree|
-| - Use methods instead of comments to segment your code  | [^CC] chapter 4 page 67 | |
-| - Write comments to explain the why, not the what       | [^CC] chapter 4 page 55ff. |Exactly so I use comments|
-| - Design goes into the design documents, not the code   | [^CC] chapter 4 page 63 | |
+| - Express yourself in code, not in comments             |[^CC] chapter 4 page 55, [^IP] chapter 7 page 69 |Agree, but if the code become to complex just because of the attempt to avoid comments, then I thing it is OK to write comments|
+| - Comments are no excuse for bad names		          |[^RF] chapter 3 page 84   |Agree|
+| - Use methods instead of comments to segment your code  |[^CC] chapter 4 page 67 | |
+| - Write comments to explain the why, not the what       |[^CC] chapter 4 page 55ff., [^IP] chapter 8 page 85, [^RF] chapter 3 page 84 |Exactly so I use comments|
+| - Design goes into the design documents, not the code   |[^CC] chapter 4 page 63 | |
 | - Comment with ", not with *                            |   | |
 | - Put comments before the statement they relate to      |   | |
-| - Delete code instead of commenting it                  | [^CC] chapter 4 page 68 |Ja, this cost a bit of courage but after 10 times you get accommodate to this|
-| - Use FIXME, TODO, and XXX and add your ID              | [^CC] chapter 4 page 58 | |
-| - Don't add method signature and end-of comments        | [^CC] chapter 4 page 67 | |
-| - Don't duplicate message texts as comments             | [^CC] chapter 4 page 60 | |
-| - ABAP Doc only for public APIs                         | [^CC] chapter 4 page 59 | |
+| - Delete code instead of commenting it                  |[^CC] chapter 4 page 68 |Ja, this cost a bit of courage but after 10 times you get accommodate to this|
+| - Use FIXME, TODO, and XXX and add your ID              |[^CC] chapter 4 page 58 | |
+| - Don't add method signature and end-of comments        |[^CC] chapter 4 page 67 | |
+| - Don't duplicate message texts as comments             |[^CC] chapter 4 page 60 | |
+| - ABAP Doc only for public APIs                         |[^CC] chapter 4 page 59 | |
 | - Prefer pragmas to pseudo comments                     |   | |
 
 ## Formatting
@@ -4362,14 +4449,14 @@ var1 = var2 = var3.
 
 | Topic                                                              | Reference     | Opinion |
 |--------------------------------------------------------------------|---------------|---------|
-| - Be consistent                                                    | [^CC] chapter 5 page 75 | |
-| - Optimize for reading, not for writing	                         | [^CC] chapter 5 page 77 | |
+| - Be consistent                                                    |[^CC] chapter 5 page 75, [^IP] chapter 3 page 11 | |
+| - Optimize for reading, not for writing	                         |[^CC] chapter 5 page 77, [^IP] chapter 3 page 10 | |
 | - Use the Pretty Printer before activating                         |   | |
 | - Use your Pretty Printer team settings                            |   | |
 | - No more than one statement per line                              |   |Ja there I know also colleagues who like to put more statements in one line|
-| - Stick to a reasonable line length                                | [^CC] chapter 5 page 77 | |
+| - Stick to a reasonable line length                                |[^CC] chapter 5 page 77 | |
 | - Condense your code                                               |   | |
-| - Add a single blank line to separate things, but not more         | [^CC] chapter 5 page 78 | |
+| - Add a single blank line to separate things, but not more         |[^CC] chapter 5 page 78 | |
 | - Align assignments to the same object, but not to different ones  |   | |
 | - Close brackets at line end                                       |   | |
 | - Keep single parameter calls on one line                          |   | |
@@ -4377,10 +4464,10 @@ var1 = var2 = var3.
 | - If you break, indent parameters under the call                   |   | |
 | - Line-break multiple parameters			                         |   | |
 | - Align parameters                                                 |   | |
-| - Break the call to a new line if the line gets too long           | [^CC] chapter 5 page 89 | |
-| - Indent and snap to tab                                           | [^CC] chapter 5 page 88 | |
+| - Break the call to a new line if the line gets too long           |[^CC] chapter 5 page 89 | |
+| - Indent and snap to tab                                           |[^CC] chapter 5 page 88 | |
 | - Indent in-line declarations like method calls                    |   | |
-| - Don't align type clauses                                         | [^CC] chapter 5 page 87 | |
+| - Don't align type clauses                                         |[^CC] chapter 5 page 87 | |
 | - Don't chain assignments                                          |   | |
 
 ## Testing
@@ -5228,12 +5315,12 @@ Instead of copy-pasting this over and over again.
 | Topic                                                                 | Reference     | Opinion |
 |-----------------------------------------------------------------------|---------------|---------|
 | - Write testable code                                                 |   |I usually to TDD|
-| - Enable others to mock you                                           |   | |
-| - Readability rules                                                   | [^CC] chapter 9 page 124 | |
+| - Enable others to mock you                                           |[^CC] chapter 9 page 124 | |
+| - Readability rules                                                   |[^CC] chapter 9 page 124 | |
 | - Don't make copies or write test reports                             |   | |
 | - Test public, not private internals                                  |   | |
 | - Don't obsess about coverage                                         |   | |
-| - Call local test classes by their purpose                            | [^CC] chapter 17 page 313 | |
+| - Call local test classes by their purpose                            |[^CC] chapter 17 page 313 | |
 | - Put tests in local classes                                          |   | |
 | - Put help methods in help classes                                    |   |or in the local parts of the global class|
 | - How to execute test classes                                         |   | |
@@ -5253,10 +5340,10 @@ Instead of copy-pasting this over and over again.
 | - Test method names: reflect what's given and expected                |   | |
 | - "When" is exactly one call                                          |   | |
 | - Don't add a TEARDOWN unless you really need it                      |   | |
-| - Make it easy to spot meaning                                        |   | |
+| - Make it easy to spot meaning                                        |[^CC] chapter 9 page 131 | |
 | - Make it easy to spot differences                                    |   | |
 | - Use constants to describe purpose and importance of test data       |   | |
-| - Few, focused assertions                                             | [^CC] chapter 9 page 130 | |
+| - Few, focused assertions                                             |[^CC] chapter 9 page 130 | |
 | - Use the right assert type                                           |   | |
 | - Assert content, not quantity                                        |   | |
 | - Assert quality, not content                                         |   | |
@@ -5264,6 +5351,16 @@ Instead of copy-pasting this over and over again.
 | - Forward unexpected exceptions instead of catching and failing       |   | |
 | - Write custom asserts to shorten code and avoid duplication          |   | |
 
+### Code smells testing
+> [Clean ABAP](#clean-abap) > [Content](#content) > [Names](#names) > [This section](#code-smells-testing)
+
+| Smell                                                   | Reference     |
+|---------------------------------------------------------|---------------|
+| - Insufficient test |[^CC] chapter 17 page 313 |
+| - Don't skip trivial tests |[^CC] chapter 17 page 313 |
+| - Test boundary conditions|[^CC] chapter 17 page 314 |
+| - Test coverage patterns can be revealing |[^CC] chapter 17 page 314 |
+| - Tests should be fast |[^CC] chapter 17 page 314 |
 
 # Footnotes
 [^CC]: Robert C. Martin - Clean Code, A Handbook of Agile Software Craftsmanship. 
